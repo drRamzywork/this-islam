@@ -151,7 +151,7 @@ const HeroApi = ({ items }) => {
                 </div>
 
                 <div className={styles.title}>
-                  <h5>خالق واحد ... معبود واحد</h5>
+                  <h5>{card.title}</h5>
                 </div>
 
                 <div className={styles.icon_container}>
@@ -178,7 +178,7 @@ const HeroApi = ({ items }) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}>
-            <h1>{'خالق واحد ... معبود واحد'}</h1>
+            <h1>{cards[activeIndex].title}</h1>
           </motion.div>
         </>
       }
