@@ -1,0 +1,74 @@
+:root {
+  --effra-font: "__Effra_7e2398", "__Effra_Fallback_7e2398";
+  --regular: 400;
+  --meduim: 500;
+  --bold: 700;
+
+  --main-blue: #092e47;
+  --sec-blue: linear-gradient(180deg, #092e47 1.45%, #000000 61%);
+  --opacity-blue: #1ea1cb;
+  --sec-blue-800: #0078a2;
+
+  --main-green: #6f8502;
+
+  --main-white: #ffffff;
+  --sec-white: #e1f5f8;
+  --sec-white-300: #e2f6f9;
+  --gray-600: #757575;
+  --gray-700: #616161;
+  --gray-900: #212121;
+
+  --main-black: #000000;
+
+  --size-14: 14px;
+  --size-16: 16px;
+  --size-20: 20px;
+  --size-24: 24px;
+  --size-26: 26px;
+  --size-32: 32px;
+  --size-36: 36px;
+  --size-38: 38px;
+  --size-48: 48px;
+  --size-72: 72px;
+
+  /* border-raduis */
+  --br-12: 12px;
+  --br-50: 50%;
+  --br-24: 24px;
+  --br-17: 17.61px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  line-height: unset !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  color: unset;
+}
+
+#hero {
+  .swiper-pagination {
+    display: none;
+  }
+
+  .swiper-button-disabled {
+    opacity: 0;
+  }
+}
+
+// .Hero_active__JPcd0 {
+// }
