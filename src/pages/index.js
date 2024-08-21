@@ -1,15 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Cairo } from "next/font/google";
 import Home from "@/components/Home";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Home/Hero";
 
-const cairo = Cairo({
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "600", "700", "900", "1000"],
-  style: ["normal"],
-});
 export default function App() {
   return (
     <>
@@ -20,9 +12,7 @@ export default function App() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main className={` ${cairo.className}`}>
-        <Home />
-      </main>
+      <Home />
     </>
   );
 }

@@ -62,6 +62,7 @@ const Hero = () => {
     setCards(reorderedCards);
     setActiveIndex(0);
     swiperRef.current?.slideTo(0);
+    setIsActive(false)
   };
 
   return (
@@ -93,7 +94,6 @@ const Hero = () => {
               return formattedNumber;
             },
           }}
-
           dir={'rtl'}
           spaceBetween={16}
           slidesPerView={4.1}

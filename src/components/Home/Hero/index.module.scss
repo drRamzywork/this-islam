@@ -66,7 +66,7 @@ section.hero {
   }
 
   .swiper_container {
-    transform: translateX(-91%);
+    transform: translateX(-92%);
     position: relative;
     z-index: 99;
     width: 100%;
@@ -80,10 +80,8 @@ section.hero {
 
       border-radius: var(--br-17);
 
-      // width: 240px;
-      // height: 340px;
-      width: 340px;
-      height: 440px;
+      width: 300px;
+      height: 400px;
 
       position: relative;
       overflow: hidden;
@@ -295,6 +293,9 @@ section.hero {
       .box {
         // width: 340px;
         // height: 440px;
+
+        width: 340px;
+        height: 440px;
 
         .img_container {
           img {

@@ -7,6 +7,8 @@ nav.navbar {
   z-index: 1000;
   transition: top 0.3s;
 
+  background: linear-gradient(#000000a2, hsla(0, 0%, 100%, 0));
+
   .sec_container {
     display: flex;
     align-items: center;
