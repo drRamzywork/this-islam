@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { motion } from 'framer-motion';
+import { FaHandPointUp } from 'react-icons/fa';
 
 
 const initialCards = [
@@ -16,20 +17,34 @@ const initialCards = [
 
   { desc: 'يعتبر عيسى -عليه السلام- من أهم الشخصيات عبر التاريخ، ومن أعظم من قدموا الخير للإنسانية، واختلف الناس في الموقف منه بين من جعله إلهاً، أو ابناً للرب، وبين من عاداه ورماه بالنقائص والاتهامات الباطلة، فما موقف الإسلام من عيسى -عليه السلام-؟', img: '/assets/imgs/home_screen4.png', id: 2, title: 'موقف الإسلام من عيسى عليه السلام' },
 
-  { desc: 'يؤكد الإسلام أن الاعتقاد النظري لا يكفي للدخول في الإيمان، فإذا كان الرب الخالق واحدًا فينبغي أن يكون الإله والمعبود واحدًا. تعني كلمة (الله) باللغة العربية ثلاث معان مجتمعة: فهي تعني المعبود الذي يخلص الناس له صلاتهم وصيامهم وتوجه قلوبهم وجميع عباداتهم. والعظيم في ذاته وصفاته ومجده بحيث تحار', img: '/assets/imgs/home_screen3.png', id: 3, title: 'خالق واحد.. معبود واحد' },
+  { desc: 'يؤكد الإسلام أن الاعتقاد النظري لا يكفي للدخول في الإيمان، فإذا كان الرب الخالق واحدًا فينبغي أن يكون الإله والمعبود واحدًا. تعني كلمة (الله) باللغة العربية ثلاث معان مجتمعة: فهي تعني المعبود الذي يخلص الناس له صلاتهم وصيامهم وتوجه قلوبهم وجميع عباداتهم. والعظيم في ذاته وصفاته ومجده بحيث تحار', img: '/assets/imgs/home_screen3.png', id: 3, title: 'خالق واحد .. معبود واحد' },
 
 
   { desc: 'يندهش بعض الناس -جراء ما يتكرر في وسائل الإعلام- إذا علموا أن السلام له مكانة استثنائية في الإسلام، فالمسلم يكرر لفظ السلام ويستشعر معانيه عدة مرات يومياً. فالسلام اسم من أسماء الله تعالى، وجنته في الآخرة اسمها دار السلام، وتحية المسلمين تبدأ بكلمة السلام، وتنتهي صلاة المسلمين', img: '/assets/imgs/home_screen2.png', id: 4, title: 'الإسلام دين السلام' },
 
   { desc: 'يصدق القول في كثير من الأسر في العصر الحاضر أنها عبارة عن مجموعة من الأفراد لديهم مفاتيح متعددة لبيت واحد وصار كثير من الأشخاص للأسف يتهرب من تحمل مسؤولية حقيقية تجاه زوجة أو أولاد، فما الذي يمنعه من أن يستمتع ويقضي ملذاته بدون تحمل تلك المسؤولية؟', img: '/assets/imgs/home_screen1.png', id: 5, title: 'الأسرة في الإسلام' },
-
-
-
 ];
 
 
+const breakpoints = {
+  1: {
+    slidesPerView: 1.6
+  },
+  400: { slidesPerView: 1.8 },
+  500: { slidesPerView: 1.8 },
+  600: { slidesPerView: 1.8 },
+  700: { slidesPerView: 2.8 },
+  800: { slidesPerView: 2.1 },
+  850: { slidesPerView: 3.1 },
+  900: {
+    slidesPerView: 3.1
+  },
+  1300: { slidesPerView: 4.1 },
+}
+
+
+
 const HeroApi = ({ items }) => {
-  console.log(items, "items")
   const [isSwiperInitialized, setIsSwiperInitialized] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -99,8 +114,10 @@ const HeroApi = ({ items }) => {
           }}
           dir={'rtl'}
           centeredSlides={true}
-          spaceBetween={16}
-          slidesPerView={4.1}
+          // spaceBetween={16}
+          // slidesPerView={4.1}
+          breakpoints={breakpoints}
+
           className={styles.swiper}
           initialSlide={activeIndex}
           onSlideChange={(swiper) => {
@@ -134,7 +151,11 @@ const HeroApi = ({ items }) => {
                 </div>
 
                 <div className={styles.title}>
-                  <h5>{card.title}</h5>
+                  <h5>خالق واحد ... معبود واحد</h5>
+                </div>
+
+                <div className={styles.icon_container}>
+                  <FaHandPointUp />
                 </div>
 
 
@@ -153,11 +174,11 @@ const HeroApi = ({ items }) => {
       {!isActive &&
         <>
           <motion.div className={styles.sec_title}
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}>
-            <h1>{cards[activeIndex].title}</h1>
+            transition={{ duration: 0.5 }}>
+            <h1>{'خالق واحد ... معبود واحد'}</h1>
           </motion.div>
         </>
       }
@@ -173,8 +194,8 @@ const HeroApi = ({ items }) => {
             <div className={styles.text_container}>
               {!isActive &&
                 <motion.div
-                  initial={{ opacity: 0, y: 100 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }} className={styles.desc}>
                   <p>{cards[activeIndex].desc}</p>
