@@ -482,15 +482,16 @@ section.hero {
 
 @media screen and (max-width: 992px) {
   section.hero {
-    padding-top: 144px;
+    padding-top: 80px;
 
     .sec_title {
       position: absolute;
       top: 33%;
-      right: -10%;
+      right: 20px;
       width: 100%;
       transform: translate(-50px, -50px);
       z-index: 9;
+      max-width: 70%;
       h1 {
         color: var(--main-white);
         font-weight: bold;
@@ -522,6 +523,7 @@ section.hero {
 
     .content_container {
       bottom: 40px;
+
       .sec_container {
         .text_container {
           .desc {

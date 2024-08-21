@@ -37,3 +37,29 @@ nav.navbar {
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  nav.navbar {
+    .sec_container {
+      .logo {
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      .settings_container {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        .icon_container {
+          svg {
+            color: white;
+            width: 28px;
+            height: 28px;
+          }
+        }
+      }
+    }
+  }
+}

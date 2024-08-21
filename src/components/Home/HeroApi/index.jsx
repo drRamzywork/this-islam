@@ -177,7 +177,7 @@ const HeroApi = ({ items }) => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}>
+            transition={{ duration: 1 }}>
             <h1>{cards[activeIndex].title}</h1>
           </motion.div>
         </>
@@ -197,7 +197,7 @@ const HeroApi = ({ items }) => {
                   initial={{ opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }} className={styles.desc}>
+                  transition={{ duration: 1 }} className={styles.desc}>
                   <p>{cards[activeIndex].desc}</p>
                 </motion.div>
               }
