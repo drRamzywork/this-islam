@@ -115,3 +115,9 @@ section.quran {
     }
   }
 }
+
+@media screen and (max-width: 450px) {
+  section.quran {
+    display: none;
+  }
+}
