@@ -135,7 +135,7 @@ const HeroApi = ({ items }) => {
           }}
         >
 
-          {cards?.map((card, index) => (
+          {initialCards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div className={`${styles.box} ${index === activeIndex ? styles.active : ''}`}
                 // onClick={() => {

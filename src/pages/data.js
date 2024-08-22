@@ -2,6 +2,7 @@ import Head from "next/head";
 import Home from "@/components/Home";
 import Navbar from "@/components/Navbar";
 import HeroApi from "@/components/Home/HeroApi";
+import Quran from "@/components/Home/Quran";
 
 export default function Data({ items }) {
   return (
@@ -14,6 +15,7 @@ export default function Data({ items }) {
       </Head>
       <Navbar />
       <HeroApi items={items} />
+      <Quran />
     </>
   );
 }

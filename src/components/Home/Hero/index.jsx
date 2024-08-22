@@ -173,7 +173,7 @@
 //                   initial={{ opacity: 0, y: 100 }}
 //                   animate={{ opacity: 1, y: 0 }}
 //                   exit={{ opacity: 0 }}
-//                   transition={{ duration: 1 }} className={styles.desc}>
+//                   transition={{ duration: 0.5 }} className={styles.desc}>
 //                   <p>يؤكد الإسلام أن الاعتقاد النظري لا يكفي للدخول في الإيمان، فإذا كان الرب الخالق واحدًا فينبغي أن يكون الإله والمعبود واحدًا. تعني كلمة (الله) باللغة العربية ثلاث معان مجتمعة: فهي تعني المعبود الذي يخلص الناس له صلاتهم وصيامهم وتوجه قلوبهم وجميع عباداتهم.</p>
 //                 </motion.div>
 //               }
@@ -274,7 +274,7 @@ const breakpoints = {
   1300: { slidesPerView: 4.1 },
 }
 
-const HeroApi = ({ items }) => {
+const HeroApi = () => {
   const [isSwiperInitialized, setIsSwiperInitialized] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -365,7 +365,7 @@ const HeroApi = ({ items }) => {
           }}
         >
 
-          {cards?.map((card, index) => (
+          {initialCards?.map((card, index) => (
             <SwiperSlide key={index}>
               <div className={`${styles.box} ${index === activeIndex ? styles.active : ''}`}
                 // onClick={() => {
@@ -407,7 +407,7 @@ const HeroApi = ({ items }) => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}>
+            transition={{ duration: 0.5 }}>
             <h1>{'خالق واحد ... معبود واحد'}</h1>
           </motion.div>
         </>
@@ -427,7 +427,7 @@ const HeroApi = ({ items }) => {
                   initial={{ opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }} className={styles.desc}>
+                  transition={{ duration: 0.5 }} className={styles.desc}>
                   <p>{cards[activeIndex].desc}</p>
                 </motion.div>
               }
