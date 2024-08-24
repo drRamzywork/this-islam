@@ -1,15 +1,23 @@
-import React from 'react'
-import { IoArrowUp } from 'react-icons/io5'
-import styles from './index.module.scss'
+import React from 'react';
+import { IoArrowUp } from 'react-icons/io5';
+import styles from './index.module.scss';
+import { motion } from 'framer-motion';
+
 const Quran = () => {
   return (
     <>
       <section id='quran' className={styles.quran} dir='rtl'>
-        <div className="container">
 
+        <div className="container">
           <div className={styles.sec_container}>
 
-            <div className={styles.text_container}>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className={styles.text_container}>
+
               <div className={styles.title}>
                 <h2> <span>القرآن</span> الكريم</h2>
 
@@ -17,13 +25,15 @@ const Quran = () => {
                   <img src="/assets/svgs/sec_icon_title.svg" alt="" />
                 </div>
               </div>
+
               <div className={styles.desc}>
                 <p>ما هو القرآن الكريم الذي كثيراً ما يتصدر أعلى الكتب مبيعاً وتوزيعاً حول العالم؟ ويؤمن به ما يزيد عن مليار ونصف مسلم؟</p>
               </div>
 
-            </div>
+            </motion.div>
 
             <div className={styles.content_container}>
+
               <div className={styles.text_container}>
                 <div className={styles.title}>
                   <div className={styles.icon_container}>
@@ -49,6 +59,7 @@ const Quran = () => {
               <div className={styles.img_container}>
                 <img src="/assets/imgs/5.jpeg" alt="" />
               </div>
+
             </div>
 
 
@@ -83,8 +94,8 @@ const Quran = () => {
             </div>
 
           </div>
-
         </div>
+
       </section>
     </>
   )

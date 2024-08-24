@@ -372,9 +372,7 @@ const HeroApi = () => {
                 //   setIsActive(false)
                 //   setActiveIndex(index);
                 // }}
-
                 onClick={() => handleSlideClick(index)}
-
               >
                 <div className={styles.img_container}>
                   <img src={card.img} alt="" />
