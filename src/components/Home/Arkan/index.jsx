@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './index.module.scss'
-import Pray from '@/public/assets/svgs/pray'
 import { IoArrowUp } from 'react-icons/io5'
+import Pray from '@/public/assets/svgs/Pray'
 const data = [
   { title: 'الصلاة', desc: 'تكتسب الصلاة أهميتها الكبرى في الإسلام؛ لأنها الطريق الأهم للقرب من الله ودعائه والخضوع له', icon: '/assets/svgs/pray.svg' },
   { title: 'الصلاة', desc: 'تكتسب الصلاة أهميتها الكبرى في الإسلام؛ لأنها الطريق الأهم للقرب من الله ودعائه والخضوع له', icon: '/assets/svgs/pray.svg' },
