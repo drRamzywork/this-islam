@@ -73,7 +73,7 @@ const Questions = () => {
 
               <div className={styles.swiper_container}>
                 {data.map((question, index) =>
-                  <div onClick={() => handleSlideClick(index)} className={`${styles.box_container} ${activeSlide === index ? styles.active : ''}`}>
+                  <div key={index} onClick={() => handleSlideClick(index)} className={`${styles.box_container} ${activeSlide === index ? styles.active : ''}`}>
                     <div className={styles.icon}>
                       <RiMenuAddLine />
                     </div>
