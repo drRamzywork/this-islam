@@ -73,14 +73,17 @@ section.arkan {
         z-index: 99999;
 
         &:nth-child(1) {
-          margin-top: 408px;
+          margin-top: 208px;
           transform: rotate(24deg) translateY(110px);
           .circle_container {
             transform: rotate(-24deg);
           }
         }
+        &:nth-child(3) {
+          transform: translateY(-70px);
+        }
         &:nth-child(2) {
-          margin-top: 208px;
+          margin-top: -22px;
           transform: rotate(15deg);
           .circle_container {
             transform: rotate(-15deg);
@@ -92,10 +95,10 @@ section.arkan {
             transform: rotate(15deg);
           }
 
-          margin-top: 148px;
+          margin-top: -22px;
         }
         &:nth-child(5) {
-          margin-top: 408px;
+          margin-top: 208px;
           transform: rotate(-24deg) translateY(110px);
 
           .circle_container {
@@ -124,6 +127,13 @@ section.arkan {
             color: var(--sec-green);
             font-size: var(--size-32);
             font-weight: 700;
+          }
+
+          &:hover {
+            background-color: var(--sec-green);
+            * {
+              color: var(--main-white) !important;
+            }
           }
         }
         .line {
