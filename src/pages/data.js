@@ -3,6 +3,10 @@ import Home from "@/components/Home";
 import Navbar from "@/components/Navbar";
 import HeroApi from "@/components/Home/HeroApi";
 import Quran from "@/components/Home/Quran";
+import Footer from "@/components/Footer";
+import Questions from "@/components/Home/Questions";
+import Prophet from "@/components/Prophet";
+import Arkan from "@/components/Home/Arkan";
 
 export default function Data({ items }) {
   return (
@@ -16,19 +20,26 @@ export default function Data({ items }) {
       <Navbar />
       <HeroApi items={items} />
       <Quran />
+      <Arkan />
+      <Prophet />
+      <Questions />
+      <Footer />
     </>
   );
 }
 
 export async function getStaticProps() {
-  const itemsRes = await fetch(
-    `https://app.thisislam.net/api/get_home/${"ar"}`
-  );
+  const baseURL = "https://app.thisislam.net/api";
+  const itemsRes = await fetch(`${baseURL}/get_home/${"ar"}`);
   const items = await itemsRes.json();
+
+  const allLangsRes = await fetch(`${baseURL}/all_langs`);
+  const allLangs = await allLangsRes.json();
 
   return {
     props: {
       items,
+      allLangs,
     },
     revalidate: 10,
   };

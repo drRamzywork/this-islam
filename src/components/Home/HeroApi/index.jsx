@@ -72,14 +72,8 @@ const HeroApi = ({ items }) => {
 
   const handleSlideClick = (index) => {
     setIsActive(false)
-    const clickedCard = cards[index];
-    const reorderedCards = [
-      clickedCard,
-      ...cards.filter((_, i) => i !== index)
-    ];
-    setCards(reorderedCards);
-    setActiveIndex(0);
-    swiperRef.current?.slideTo(0);
+
+    setActiveIndex(index);
     setIsActive(false)
   };
 
@@ -133,6 +127,7 @@ const HeroApi = ({ items }) => {
               swiper.navigation.update();
             }
           }}
+
         >
 
           {initialCards?.map((card, index) => (
@@ -171,7 +166,7 @@ const HeroApi = ({ items }) => {
       </div>
 
 
-      {!isActive &&
+      {/* {!isActive &&
         <>
           <motion.div className={styles.sec_title}
             initial={{ opacity: 0, x: -50 }}
@@ -181,7 +176,7 @@ const HeroApi = ({ items }) => {
             <h1>{cards[activeIndex].title}</h1>
           </motion.div>
         </>
-      }
+      } */}
 
 
       <div className={styles.content_container}>
@@ -192,15 +187,17 @@ const HeroApi = ({ items }) => {
 
 
             <div className={styles.text_container}>
-              {!isActive &&
-                <motion.div
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }} className={styles.desc}>
-                  <p>{cards[activeIndex].desc}</p>
-                </motion.div>
-              }
+              {/* {!isActive && */}
+              <motion.div
+                key={activeIndex}
+                initial={{ scale: 0.5 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                transition={{ duration: 1 }}
+                className={styles.desc}>
+                <p>{cards[activeIndex].desc}</p>
+              </motion.div>
+              {/*   }*/}
 
               <div className={styles.read_more}>
                 <p>إقرأ المزيد</p>

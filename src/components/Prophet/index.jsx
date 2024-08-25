@@ -39,7 +39,12 @@ const Prophet = () => {
         <div className="container">
 
           <div className={styles.sec_container}>
-            <div className={styles.text_container}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className={styles.text_container}>
               <div className={styles.title}>
                 <h2><span>محمد</span>  رسول الله</h2>
 
@@ -51,7 +56,7 @@ const Prophet = () => {
               <div className={styles.desc}>
                 <p>أركان الإسلام تمثل الأسس الأساسية التي يقوم عليها الدين الإسلامي، وهي تعاليم إلزامية يجب على كل مسلم الالتزام بها لضمان تحقيق إيمانه بالشكل الصحيح وتوطيد علاقته بالله تعالى.</p>
               </div>
-            </div>
+            </motion.div>
 
             <div className={styles.swiper_container}>
               <Swiper
@@ -79,16 +84,26 @@ const Prophet = () => {
 
 
               <div className={styles.active_section}>
-                <div className={styles.img_container}>
+                <motion.div initial={{ scale: 0.5, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0 }}
+                  transition={{ duration: 1, type: "tween" }} className={styles.img_container}>
                   <img src="/assets/imgs/8.jpeg" alt="" />
-                </div>
+                </motion.div>
 
                 <div className={styles.text_container}>
-                  <div className={styles.title}>
-                    <h3>من هو رسول الاسلام ؟</h3></div>
+                  <motion.div initial={{ x: -50 }}
+                    whileInView={{ x: 0 }}
+                    exit={{ scale: 0 }}
+                    transition={{ duration: 1, type: "tween" }} className={styles.title}>
+                    <h3>من هو رسول الاسلام ؟</h3>
+                  </motion.div>
 
 
-                  <div className={styles.desc}><p>محمد هو اسم نبي الإسلام..وهو أحد أكثر الأسماء انتشارًا حول العالم اليوم، ومعناه الذي يحمده الناس ويثنون عليه لأخلاقه وأفعاله..فمن هو محمد ؟ اسمُ رسول الإسلام: محمد بن عبد الله بن عبد المطلب بن هاشم القرشي 570-632م ويعتقد المسلمون جميعاً أنه رسول الله إلى الناس جميعاً</p></div>
+                  <motion.div initial={{ x: 50 }}
+                    whileInView={{ x: 0 }}
+                    exit={{ scale: 0 }}
+                    transition={{ duration: 1, type: "tween" }} className={styles.desc}><p>محمد هو اسم نبي الإسلام..وهو أحد أكثر الأسماء انتشارًا حول العالم اليوم، ومعناه الذي يحمده الناس ويثنون عليه لأخلاقه وأفعاله..فمن هو محمد ؟ اسمُ رسول الإسلام: محمد بن عبد الله بن عبد المطلب بن هاشم القرشي 570-632م ويعتقد المسلمون جميعاً أنه رسول الله إلى الناس جميعاً</p></motion.div>
 
 
                   <div className={styles.button_container}>

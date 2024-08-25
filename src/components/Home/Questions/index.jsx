@@ -36,12 +36,17 @@ const Questions = () => {
   };
 
 
+
   return (
     <>
       <section id='prophet' className={styles.prophet}>
         <div className="container">
 
-          <div className={styles.text_container}>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 0.5 }} className={styles.text_container}>
             <div className={styles.title}>
               <h2><span>أسئلة</span>  شائعة تؤرقنا</h2>
 
@@ -53,7 +58,8 @@ const Questions = () => {
             <div className={styles.desc}>
               <p>من منا لم يتوقف لحظة في أثناء عمره ليسأل نفسه.. </p>
             </div>
-          </div>
+          </motion.div>
+
         </div>
 
 
@@ -64,14 +70,22 @@ const Questions = () => {
 
 
               <div className={styles.active_section}>
-                <div className={styles.img_container}>
+                <motion.div initial={{ scale: 0.5, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0 }}
+                  transition={{ duration: 1, type: "tween" }} className={styles.img_container}>
                   <img src="/assets/svgs/question.svg" alt="" />
-                </div>
+                </motion.div>
 
 
               </div>
 
-              <div className={styles.swiper_container}>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 1 }}
+
+                className={styles.swiper_container}>
                 {data.map((question, index) =>
                   <div key={index} onClick={() => handleSlideClick(index)} className={`${styles.box_container} ${activeSlide === index ? styles.active : ''}`}>
                     <div className={styles.icon}>
@@ -83,10 +97,7 @@ const Questions = () => {
                   </div>
 
                 )}
-
-
-
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 import { IoArrowUp } from 'react-icons/io5'
 import Pray from '@/public/assets/svgs/Pray'
+import { motion } from 'framer-motion'
+
 const data = [
   { title: 'الصلاة', desc: 'تكتسب الصلاة أهميتها الكبرى في الإسلام؛ لأنها الطريق الأهم للقرب من الله ودعائه والخضوع له', icon: '/assets/svgs/pray.svg' },
   { title: 'الصلاة', desc: 'تكتسب الصلاة أهميتها الكبرى في الإسلام؛ لأنها الطريق الأهم للقرب من الله ودعائه والخضوع له', icon: '/assets/svgs/pray.svg' },
@@ -10,6 +12,12 @@ const data = [
   { title: 'الصلاة', desc: 'تكتسب الصلاة أهميتها الكبرى في الإسلام؛ لأنها الطريق الأهم للقرب من الله ودعائه والخضوع له', icon: '/assets/svgs/pray.svg' },
 ]
 const Arkan = () => {
+
+
+
+
+
+
   return (
     <>
       <section id='arkan' className={styles.arkan}>
@@ -20,7 +28,11 @@ const Arkan = () => {
         <div className="container">
 
           <div className={styles.sec_container}>
-            <div className={styles.text_container}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 1 }}
+              transition={{ duration: 0.5 }} className={styles.text_container}>
               <div className={styles.title}>
                 <h2>أركان الاسلام</h2>
 
@@ -32,61 +44,32 @@ const Arkan = () => {
               <div className={styles.desc}>
                 <p>أركان الإسلام تمثل الأسس الأساسية التي يقوم عليها الدين الإسلامي، وهي تعاليم إلزامية يجب على كل مسلم الالتزام بها لضمان تحقيق إيمانه بالشكل الصحيح وتوطيد علاقته بالله تعالى.</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className={styles.content_container}>
-              <div className={`${styles.icons_section} ${styles.active}`}>
-                <div className={styles.circle_container}>
-                  <div className={styles.icon}>
-                    <Pray />
+            <motion.div className={styles.content_container}
+              initial={{ opacity: 0, y: 500 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, type: 'tween' }}>
+              {data.map((box, idx) =>
+                <motion.div className={styles.icons_section}>
+                  <div className={styles.circle_container}>
+                    <div className={styles.icon}>
+                      <Pray />
+                    </div>
+                    <h6 >{box.title}</h6>
                   </div>
-                  <h6 >الصلاة</h6>
-                </div>
-                <div className={styles.line}></div>
-              </div>
-              <div className={styles.icons_section}>
-                <div className={styles.circle_container}>
-                  <div className={styles.icon}>
-                    <Pray />
-                  </div>
-                  <h6 >الصلاة</h6>
-                </div>
-                <div className={styles.line}></div>
-              </div>
-              <div className={styles.icons_section}>
-                <div className={styles.circle_container}>
-                  <div className={styles.icon}>
-                    <Pray />
-                  </div>
-                  <h6 >الصلاة</h6>
-                </div>
-                <div className={styles.line}></div>
-              </div>
-              <div className={styles.icons_section}>
-                <div className={styles.circle_container}>
-                  <div className={styles.icon}>
-                    <Pray />
-                  </div>
-                  <h6 >الصلاة</h6>
-                </div>
-                <div className={styles.line}></div>
-              </div>
-              <div className={styles.icons_section}>
-                <div className={styles.circle_container}>
-                  <div className={styles.icon}>
-                    <Pray />
-                  </div>
-                  <h6 >الصلاة</h6>
-                </div>
-                <div className={styles.line}></div>
-              </div>
+                  <div className={styles.line} />
+                </motion.div>
+              )}
 
 
-            </div>
+            </motion.div>
+
             <div className={styles.active_section}>
               <div className={styles.icon_container}>
                 <Pray />
               </div>
+
               <div className={styles.title}>
                 <h6>الصلاة</h6>
               </div>
@@ -105,7 +88,7 @@ const Arkan = () => {
           </div>
         </div>
 
-      </section>
+      </section >
     </>
   )
 }
