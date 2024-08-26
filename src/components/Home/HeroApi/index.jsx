@@ -149,9 +149,7 @@ const HeroApi = ({ items }) => {
                   <h5>{card.title}</h5>
                 </div>
 
-                <div className={styles.icon_container}>
-                  <FaHandPointUp />
-                </div>
+
 
 
               </div>
