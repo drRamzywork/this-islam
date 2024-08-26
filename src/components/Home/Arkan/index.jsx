@@ -51,7 +51,7 @@ const Arkan = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, type: 'tween' }}>
               {data.map((box, idx) =>
-                <motion.div className={styles.icons_section}>
+                <motion.div className={styles.icons_section} key={idx}>
                   <div className={styles.circle_container}>
                     <div className={styles.icon}>
                       <Pray />
