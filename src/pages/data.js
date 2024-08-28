@@ -18,37 +18,29 @@ export default function Data({
   siteInfo,
   dir,
 }) {
-  console.log(dir, "dir");
   const { locale } = useRouter();
-  const imagePath = `/assets/imgs/white_logo`;
+  const imagePath = `/assets/imgs/white_logo.png`;
 
   const SiteDescription = siteInfo?.description;
 
-  console.log(siteInfo, "siteInfo");
   return (
     <>
       <Head>
-        <title>{siteInfo.site_name}</title>
+        <title>{siteInfo?.site_name}</title>
         <meta charSet="UTF-8" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-
-        <meta
-          name="csrf-token"
-          content="JdDvDc4LUJomFM4T7QE0hFlH9CeKOHDXMoxV3wer"
-        />
-
         <meta name="title" content="" />
         <link rel="icon" type="image/png" href={`${imagePath}`} />
         <meta name="theme-color" content="#092e47" />
         <meta name="mobile-web-app-capable" content="no" />
-        <meta name="application-name" content={siteInfo.site_name} />
+        <meta name="application-name" content={siteInfo?.site_name} />
         <meta name="apple-mobile-web-app-capable" content="no" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="apple-mobile-web-app-title" content={siteInfo.site_name} />
+        <meta name="apple-mobile-web-app-title" content={siteInfo?.site_name} />
         <link
           rel="apple-touch-icon"
           href={`https://this-islam.vercel.app${imagePath}`}
@@ -57,7 +49,7 @@ export default function Data({
           rel="apple-touch-startup-image"
           href={`https://this-islam.vercel.app${imagePath}`}
         />
-        <meta name="author" content={siteInfo.site_name} />
+        <meta name="author" content={siteInfo?.site_name} />
         <meta name="description" content={SiteDescription} />
         <link
           rel="canonical"
@@ -74,22 +66,21 @@ export default function Data({
         <meta name="msapplication-square310x310logo" content={imagePath} />
         <link rel="apple-touch-icon-precomposed" href={imagePath} />
         <meta property="og:type" content="website" />
-
-        <meta property="og:site_name" content={siteInfo.site_name} />
+        <meta property="og:site_name" content={siteInfo?.site_name} />
         <meta property="og:locale" content={locale} />
         <meta property="og:locale:alternate" content={locale} />
         <meta
           property="og:url"
           content={`https://this-islam.vercel.app/${locale}`}
         />
-        <meta property="og:title" content={siteInfo.site_name} />
+        <meta property="og:title" content={siteInfo?.site_name} />
         <meta property="og:description" content={SiteDescription} />
         <meta
           property="og:image"
           content={`https://this-islam.vercel.app${imagePath}`}
         />
-        <meta itemProp="name" content={siteInfo.site_name} />
-        <meta itemProp="author" content={siteInfo.site_name} />
+        <meta itemProp="name" content={siteInfo?.site_name} />
+        <meta itemProp="author" content={siteInfo?.site_name} />
         <meta
           itemProp="image"
           content={`https://this-islam.vercel.app${imagePath}`}
@@ -102,17 +93,12 @@ export default function Data({
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@" />
         <meta name="twitter:creator" content="@" />
-        <meta name="twitter:title" content={siteInfo.site_name} />
+        <meta name="twitter:title" content={siteInfo?.site_name} />
         <meta
           name="twitter:image:src"
           content={`https://this-islam.vercel.app${imagePath}`}
         />
         <meta name="twitter:description" content={SiteDescription} />
-        <link
-          rel="stylesheet"
-          src="../../public/ckeditor-content-styles.css"
-          type="text/css"
-        />
       </Head>
 
       <Navbar />
@@ -176,16 +162,15 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      dir,
       homeData,
       allLangs,
-      contentFamily: contentFamily.data,
-      contentPeace: contentPeace.data,
-      contentOneCreator: contentOneCreator.data,
-      contentJesus: contentJesus.data,
-      contentSin: contentSin.data,
-      dir: dir.data.dir,
-      siteInfo: siteInfo.data,
+      contentFamily: contentFamily?.data,
+      contentPeace: contentPeace?.data,
+      contentOneCreator: contentOneCreator?.data,
+      contentJesus: contentJesus?.data,
+      contentSin: contentSin?.data,
+      dir: dir?.data?.dir,
+      siteInfo: siteInfo?.data,
     },
     revalidate: 10,
   };

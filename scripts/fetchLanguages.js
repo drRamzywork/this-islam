@@ -10,7 +10,6 @@ async function fetchLanguages() {
     // Save to a JSON file in the public folder
     const outputPath = path.join(__dirname, "../public/locales.json");
     fs.writeFileSync(outputPath, JSON.stringify(languages), "utf8");
-    console.log("Languages fetched and saved in the public folder");
   } catch (error) {
     console.error("Failed to fetch languages:", error);
   }

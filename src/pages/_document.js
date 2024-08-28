@@ -17,19 +17,12 @@ export default function Document(props) {
 
 Document.getInitialProps = async (ctx) => {
   const initialProps = await ctx.defaultGetInitialProps(ctx);
-  const locale = ctx.query.locale || "ar";
+  const locale = ctx.query.locale;
 
-  let dir = "rtl";
-
-  try {
-    const response = await axios.get(
-      `https://app.thisislam.net/api/get_direction/${locale}`
-    );
-    dir = response?.dir.data.dir || "rtl";
-  } catch (error) {
-    console.error("Failed to fetch direction from API:", error);
-  }
-
+  const dirResponse = await fetch(
+    `https://app.thisislam.net/api/get_direction/${locale}`
+  );
+  const dir = await dirResponse.json();
   return {
     ...initialProps,
     locale,
