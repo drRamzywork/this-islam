@@ -123,55 +123,145 @@ export default function Data({
 export async function getStaticProps({ locale }) {
   const baseURL = "https://app.thisislam.net/api";
 
-  const allLangsRes = await fetch(`${baseURL}/all_langs`);
-  const allLangs = await allLangsRes.json();
+  try {
+    const allLangsRes = await fetch(`${baseURL}/all_langs`);
+    if (!allLangsRes.ok) throw new Error("Failed to fetch all_langs");
+    const allLangs = await allLangsRes.json();
 
-  const siteInfoRes = await fetch(`${baseURL}/get_site_info/${locale}`);
-  const siteInfo = await siteInfoRes.json();
+    const siteInfoRes = await fetch(`${baseURL}/get_site_info/${locale}`);
+    if (!siteInfoRes.ok) throw new Error("Failed to fetch get_site_info");
+    const siteInfo = await siteInfoRes.json();
 
-  const dirResponse = await fetch(`${baseURL}/get_direction/${locale}`);
-  const dir = await dirResponse.json();
+    const dirResponse = await fetch(`${baseURL}/get_direction/${locale}`);
+    if (!dirResponse.ok) throw new Error("Failed to fetch get_direction");
+    const dir = await dirResponse.json();
 
-  const homeDataRes = await fetch(`${baseURL}/get_home/${locale}`);
-  const homeData = await homeDataRes.json();
+    const homeDataRes = await fetch(`${baseURL}/get_home/${locale}`);
+    if (!homeDataRes.ok) throw new Error("Failed to fetch get_home");
+    const homeData = await homeDataRes.json();
 
-  const contentFamilyRes = await fetch(
-    `${baseURL}/get_content/${locale}/the-family-in-islam`
-  );
-  const contentFamily = await contentFamilyRes.json();
+    const contentFamilyRes = await fetch(
+      `${baseURL}/get_content/${locale}/the-family-in-islam`
+    );
+    if (!contentFamilyRes.ok)
+      throw new Error("Failed to fetch the-family-in-islam");
+    const contentFamily = await contentFamilyRes.json();
 
-  const contentPeaceRes = await fetch(
-    `${baseURL}/get_content/${locale}/islam-is-the-religion-of-Peace`
-  );
-  const contentPeace = await contentPeaceRes.json();
+    const contentPeaceRes = await fetch(
+      `${baseURL}/get_content/${locale}/islam-is-the-religion-of-Peace`
+    );
+    if (!contentPeaceRes.ok)
+      throw new Error("Failed to fetch islam-is-the-religion-of-Peace");
+    const contentPeace = await contentPeaceRes.json();
 
-  const contentOneCreatorRes = await fetch(
-    `${baseURL}/get_content/${locale}/one-creator-who-alone-deserves-to-be-worshipped`
-  );
-  const contentOneCreator = await contentOneCreatorRes.json();
+    const contentOneCreatorRes = await fetch(
+      `${baseURL}/get_content/${locale}/one-creator-who-alone-deserves-to-be-worshipped`
+    );
+    if (!contentOneCreatorRes.ok)
+      throw new Error(
+        "Failed to fetch one-creator-who-alone-deserves-to-be-worshipped"
+      );
+    const contentOneCreator = await contentOneCreatorRes.json();
 
-  const contentJesusRes = await fetch(
-    `${baseURL}/get_content/${locale}/islams-view-of-jesus-christ`
-  );
-  const contentJesus = await contentJesusRes.json();
+    const contentJesusRes = await fetch(
+      `${baseURL}/get_content/${locale}/islams-view-of-jesus-christ`
+    );
+    if (!contentJesusRes.ok)
+      throw new Error("Failed to fetch islams-view-of-jesus-christ");
+    const contentJesus = await contentJesusRes.json();
 
-  const contentSinRes = await fetch(
-    `${baseURL}/get_content/${locale}/sin-and-repentance`
-  );
-  const contentSin = await contentSinRes.json();
+    const contentSinRes = await fetch(
+      `${baseURL}/get_content/${locale}/sin-and-repentance`
+    );
+    if (!contentSinRes.ok)
+      throw new Error("Failed to fetch sin-and-repentance");
+    const contentSin = await contentSinRes.json();
 
-  return {
-    props: {
-      homeData,
-      allLangs,
-      contentFamily: contentFamily?.data,
-      contentPeace: contentPeace?.data,
-      contentOneCreator: contentOneCreator?.data,
-      contentJesus: contentJesus?.data,
-      contentSin: contentSin?.data,
-      dir: dir?.data?.dir,
-      siteInfo: siteInfo?.data,
-    },
-    revalidate: 10,
-  };
+    return {
+      props: {
+        homeData,
+        allLangs,
+        contentFamily: contentFamily?.data,
+        contentPeace: contentPeace?.data,
+        contentOneCreator: contentOneCreator?.data,
+        contentJesus: contentJesus?.data,
+        contentSin: contentSin?.data,
+        dir: dir?.data?.dir,
+        siteInfo: siteInfo?.data,
+      },
+      revalidate: 10,
+    };
+  } catch (error) {
+    console.error("API call error:", error.message);
+    return {
+      props: {
+        homeData: null,
+        allLangs: null,
+        contentFamily: null,
+        contentPeace: null,
+        contentOneCreator: null,
+        contentJesus: null,
+        contentSin: null,
+        dir: null,
+        siteInfo: null,
+      },
+      revalidate: 10,
+    };
+  }
 }
+
+// export async function getStaticProps({ locale }) {
+//   const baseURL = "https://app.thisislam.net/api";
+
+//   const allLangsRes = await fetch(`${baseURL}/all_langs`);
+//   const allLangs = await allLangsRes.json();
+
+//   const siteInfoRes = await fetch(`${baseURL}/get_site_info/${locale}`);
+//   const siteInfo = await siteInfoRes.json();
+
+//   const dirResponse = await fetch(`${baseURL}/get_direction/${locale}`);
+//   const dir = await dirResponse.json();
+
+//   const homeDataRes = await fetch(`${baseURL}/get_home/${locale}`);
+//   const homeData = await homeDataRes.json();
+
+//   const contentFamilyRes = await fetch(
+//     `${baseURL}/get_content/${locale}/the-family-in-islam`
+//   );
+//   const contentFamily = await contentFamilyRes.json();
+
+//   const contentPeaceRes = await fetch(
+//     `${baseURL}/get_content/${locale}/islam-is-the-religion-of-Peace`
+//   );
+//   const contentPeace = await contentPeaceRes.json();
+
+//   const contentOneCreatorRes = await fetch(
+//     `${baseURL}/get_content/${locale}/one-creator-who-alone-deserves-to-be-worshipped`
+//   );
+//   const contentOneCreator = await contentOneCreatorRes.json();
+
+//   const contentJesusRes = await fetch(
+//     `${baseURL}/get_content/${locale}/islams-view-of-jesus-christ`
+//   );
+//   const contentJesus = await contentJesusRes.json();
+
+//   const contentSinRes = await fetch(
+//     `${baseURL}/get_content/${locale}/sin-and-repentance`
+//   );
+//   const contentSin = await contentSinRes.json();
+
+//   return {
+//     props: {
+//       homeData,
+//       allLangs,
+//       contentFamily: contentFamily?.data,
+//       contentPeace: contentPeace?.data,
+//       contentOneCreator: contentOneCreator?.data,
+//       contentJesus: contentJesus?.data,
+//       contentSin: contentSin?.data,
+//       dir: dir?.data?.dir,
+//       siteInfo: siteInfo?.data,
+//     },
+//     revalidate: 10,
+//   };
+// }

@@ -79,8 +79,8 @@ const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, con
     {
       img: '/assets/imgs/home_screen1.png',
       desc: contentFamily?.parent?.short_intro,
-      title: homeData.family,
-      sec_title: homeData.inIslam,
+      title: homeData?.family,
+      sec_title: homeData?.inIslam,
       path: "the-family-in-islam",
     },
 
@@ -88,32 +88,32 @@ const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, con
       img: '/assets/imgs/home_screen2.png',
       desc: contentPeace?.parent?.short_intro,
 
-      title: homeData.islam,
-      sec_title: homeData.islamReligion,
+      title: homeData?.islam,
+      sec_title: homeData?.islamReligion,
       path: "islam-is-the-religion-of-peace",
     },
     {
       img: '/assets/imgs/home_screen3.png',
       desc: contentOneCreator?.parent?.short_intro,
 
-      title: homeData.oneCreator,
-      sec_title: homeData.oneGod,
+      title: homeData?.oneCreator,
+      sec_title: homeData?.oneGod,
       path: "one-creator-who-alone-deserves-to-be-worshipped",
     },
     {
       img: '/assets/imgs/home_screen4.png',
       desc: contentJesus?.parent?.short_intro,
 
-      title: homeData.islamApproach,
-      sec_title: homeData.eissa,
+      title: homeData?.islamApproach,
+      sec_title: homeData?.eissa,
       path: "islams-view-of-jesus-christ",
     },
     {
       img: '/assets/imgs/home_screen5.png',
       desc: contentSin?.parent?.short_intro,
 
-      title: homeData.sin,
-      sec_title: homeData.redemption,
+      title: homeData?.sin,
+      sec_title: homeData?.redemption,
       path: "sin-and-repentance",
     },
   ];
@@ -127,8 +127,6 @@ const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, con
 
         </div>
       </div>
-
-
 
       <div className={`${styles.swiper_container} ${isActive ? styles.active : ''}`}>
         <Swiper
@@ -189,12 +187,7 @@ const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, con
           ))}
 
         </Swiper>
-
-
-
-
       </div>
-
 
       {/* {!isActive &&
         <>
@@ -209,8 +202,6 @@ const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, con
       } */}
 
       <div className={styles.content_container}>
-
-
         <div className="container">
           <div className={styles.sec_container}>
 
@@ -269,9 +260,7 @@ const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, con
 
           </div>
         </div>
-
       </div>
-
     </section >
   )
 }
