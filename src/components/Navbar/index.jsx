@@ -3,7 +3,6 @@ import styles from './index.module.scss';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdLanguage } from "react-icons/md";
 
-
 const Navbar = () => {
   return (
     <nav id='navbar' className={styles.navbar}  >
