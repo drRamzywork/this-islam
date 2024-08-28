@@ -1,8 +1,7 @@
 import { Html, Head, Main, NextScript } from "next/document";
-// import { useRouter } from "next/navigation";
+import axios from "axios";
 
 export default function Document(props) {
-  // const { locale } = useRouter();
   const { locale, dir } = props;
 
   return (
@@ -18,15 +17,15 @@ export default function Document(props) {
 
 Document.getInitialProps = async (ctx) => {
   const initialProps = await ctx.defaultGetInitialProps(ctx);
-  const locale = ctx.query.locale || "en"; // Default to 'en' if no locale is specified
+  const locale = ctx.query.locale || "ar";
 
-  let dir = "ltr"; // Default direction
+  let dir = "rtl";
 
   try {
     const response = await axios.get(
-      `https://app.thisisislam.net/api/get_site_info/${locale}`
+      `https://app.thisislam.net/api/get_direction/${locale}`
     );
-    dir = response.data.data.dir || "ltr"; // Use 'ltr' as a fallback if no dir is found
+    dir = response?.dir.data.dir || "rtl";
   } catch (error) {
     console.error("Failed to fetch direction from API:", error);
   }

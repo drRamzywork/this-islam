@@ -44,7 +44,7 @@ const breakpoints = {
 
 
 
-const HeroApi = ({ items }) => {
+const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, contentJesus, contentSin, dir }) => {
   const [isSwiperInitialized, setIsSwiperInitialized] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -68,8 +68,6 @@ const HeroApi = ({ items }) => {
     return number < 10 ? `0${number}` : number.toString();
   };
 
-
-
   const handleSlideClick = (index) => {
     setIsActive(false)
 
@@ -77,10 +75,53 @@ const HeroApi = ({ items }) => {
     setIsActive(false)
   };
 
+  const carouselItems = [
+    {
+      img: '/assets/imgs/home_screen1.png',
+      desc: contentFamily?.parent?.short_intro,
+      title: homeData.family,
+      sec_title: homeData.inIslam,
+      path: "the-family-in-islam",
+    },
+
+    {
+      img: '/assets/imgs/home_screen2.png',
+      desc: contentPeace?.parent?.short_intro,
+
+      title: homeData.islam,
+      sec_title: homeData.islamReligion,
+      path: "islam-is-the-religion-of-peace",
+    },
+    {
+      img: '/assets/imgs/home_screen3.png',
+      desc: contentOneCreator?.parent?.short_intro,
+
+      title: homeData.oneCreator,
+      sec_title: homeData.oneGod,
+      path: "one-creator-who-alone-deserves-to-be-worshipped",
+    },
+    {
+      img: '/assets/imgs/home_screen4.png',
+      desc: contentJesus?.parent?.short_intro,
+
+      title: homeData.islamApproach,
+      sec_title: homeData.eissa,
+      path: "islams-view-of-jesus-christ",
+    },
+    {
+      img: '/assets/imgs/home_screen5.png',
+      desc: contentSin?.parent?.short_intro,
+
+      title: homeData.sin,
+      sec_title: homeData.redemption,
+      path: "sin-and-repentance",
+    },
+  ];
+
   return (
-    <section id='hero' className={styles.hero}>
+    <section id='hero' className={styles.hero} dir={dir}>
       <div className={styles.full_image}>
-        <img src={cards[activeIndex].img} alt="" />
+        <img src={carouselItems[activeIndex].img} alt="" />
 
         <div className={styles.noise}>
 
@@ -106,7 +147,7 @@ const HeroApi = ({ items }) => {
               return formattedNumber;
             },
           }}
-          dir={'rtl'}
+          dir={dir}
           centeredSlides={true}
           // spaceBetween={16}
           // slidesPerView={4.1}
@@ -130,27 +171,18 @@ const HeroApi = ({ items }) => {
 
         >
 
-          {initialCards?.map((card, index) => (
+          {carouselItems?.map((card, index) => (
             <SwiperSlide key={index}>
               <div className={`${styles.box} ${index === activeIndex ? styles.active : ''}`}
-                // onClick={() => {
-                //   setIsActive(false)
-                //   setActiveIndex(index);
-                // }}
-
                 onClick={() => handleSlideClick(index)}
-
               >
                 <div className={styles.img_container}>
                   <img src={card.img} alt="" />
                 </div>
 
                 <div className={styles.title}>
-                  <h5>{card.title}</h5>
+                  <h5>{card.title} {card.sec_title}</h5>
                 </div>
-
-
-
 
               </div>
             </SwiperSlide>
@@ -171,11 +203,10 @@ const HeroApi = ({ items }) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}>
-            <h1>{cards[activeIndex].title}</h1>
+            <h1>{carouselItems[activeIndex].title}</h1>
           </motion.div>
         </>
       } */}
-
 
       <div className={styles.content_container}>
 
@@ -193,7 +224,7 @@ const HeroApi = ({ items }) => {
                 exit={{ scale: 0 }}
                 transition={{ duration: 1 }}
                 className={styles.desc}>
-                <p>{cards[activeIndex].desc}</p>
+                <p>{carouselItems[activeIndex].desc}</p>
               </motion.div>
               {/*   }*/}
 
@@ -240,8 +271,6 @@ const HeroApi = ({ items }) => {
         </div>
 
       </div>
-
-
 
     </section >
   )

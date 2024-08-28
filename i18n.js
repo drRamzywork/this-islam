@@ -1,4 +1,3 @@
-// i18n.js
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import HttpApi from "i18next-http-backend";
@@ -9,13 +8,25 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    supportedLngs: ["ar"], // This will be dynamically populated
-    fallbackLng: "en",
+    supportedLngs: ["ar", "en"], // Include both Arabic and English
+    fallbackLng: "ar", // Fallback to Arabic
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
     react: {
       useSuspense: false,
+    },
+    detection: {
+      order: [
+        "querystring",
+        "cookie",
+        "localStorage",
+        "navigator",
+        "htmlTag",
+        "path",
+        "subdomain",
+      ],
+      caches: ["cookie"],
     },
   });
 

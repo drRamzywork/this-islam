@@ -3,7 +3,7 @@ import Home from "@/components/Home";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export default function App() {
+export default function App({ homeData, content }) {
   return (
     <>
       <Head>
@@ -12,9 +12,47 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Navbar />
-      <Home />
+      <Home homeData={homeData} content={content} />
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  const allLanguagesRes = await fetch(
+    "https://app.thisislam.net/api/all_langs"
+  );
+
+  const allLanguagesJson = await allLanguagesRes.json();
+  const allLanguages = allLanguagesJson.data;
+
+  const homeDataRes = await fetch(
+    `https://app.thisislam.net/api/get_home/${locale}`
+  );
+  const homeData = await homeDataRes.json();
+
+  const siteInfoRes = await fetch(
+    `https://app.thisislam.net/api/get_site_info/${locale}`
+  );
+  const siteInfo = await siteInfoRes.json();
+
+  const language = allLanguages.find((lang) => lang.code === locale) ?? null;
+
+  const contentRes = await fetch(
+    `https://app.thisislam.net/api/get_site_info/${locale}`
+  );
+  const content = await contentRes.json();
+
+  return {
+    props: {
+      language,
+      homeData,
+      allLanguages,
+      content,
+      siteInfo,
+    },
+    revalidate: 10,
+  };
 }

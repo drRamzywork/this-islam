@@ -5,7 +5,8 @@ import Arkan from './Arkan'
 import Prophet from '../Prophet'
 import Questions from './Questions'
 
-const Home = () => {
+const Home = ({ homeData, }) => {
+
   return (
     <>
       <Hero />
