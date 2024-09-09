@@ -36,17 +36,17 @@ export default function Data({
   const cleanedQuranDesc = contentQuran?.parent?.short_intro;
   const quranDesc = cleanedQuranDesc?.replace(/&nbsp;/g, " ");
 
-  const quran = home.quran;
-  const mohamed = allWords.mohamed;
+  const quran = home?.quran;
+  const mohamed = allWords?.mohamed;
 
-  const quranTitle = allWords.quran_title || "";
+  const quranTitle = allWords?.quran_title || "";
   const quranTitle2 = quranTitle.split(" ");
   const title_main1 = quranTitle2[0] || "";
   const title_main2 = quranTitle2[1] || "";
 
-  const read_moreBtn = allWords.read_more;
-  const arkanDesc = allWords.arkan_desc;
-  const testimonyTitle = allWords.testimony;
+  const read_moreBtn = allWords?.read_more;
+  const arkanDesc = allWords?.arkan_desc;
+  const testimonyTitle = allWords?.testimony;
 
   return (
     <>
@@ -127,9 +127,9 @@ export default function Data({
       </Head>
 
       <Navbar
-        dir={dir.data.dir}
-        allLangs={allLangs.data}
-        allTopics={allTopics.data}
+        dir={dir?.data?.dir}
+        allLangs={allLangs?.data}
+        allTopics={allTopics?.data}
       />
 
       <HeroApi
@@ -139,7 +139,7 @@ export default function Data({
         contentOneCreator={contentOneCreator}
         contentJesus={contentJesus}
         contentSin={contentSin}
-        dir={dir.data.dir}
+        dir={dir?.data?.dir}
       />
 
       <Quran
@@ -147,12 +147,12 @@ export default function Data({
         title_main2={title_main2}
         quranDesc={quranDesc}
         quran={quran}
-        dir={dir.data.dir}
+        dir={dir?.data?.dir}
         read_moreBtn={read_moreBtn}
       />
 
       <Arkan
-        dir={dir.data.dir}
+        dir={dir?.data?.dir}
         arkan={arkan}
         home={home}
         testimonyTitle={testimonyTitle}
@@ -160,19 +160,17 @@ export default function Data({
       />
 
       <Prophet
-        dir={dir.data.dir}
+        dir={dir?.data?.dir}
         mohamed={mohamed}
-        whoIsMohamed={whoIsMohamed.parent}
-        mohamedSights={mohamedSights.parent}
-        mohamedStories={mohamedStories.parent}
-        mohameSaying={mohameSaying.parent}
-        desMohamed={desMohamed.parent}
+        whoIsMohamed={whoIsMohamed?.parent}
+        mohamedSights={mohamedSights?.parent}
+        mohamedStories={mohamedStories?.parent}
+        mohameSaying={mohameSaying?.parent}
+        desMohamed={desMohamed?.parent}
       />
-      {locale === "ar" && (
-        <Questions dir={dir.data.dir} questions={questions} />
-      )}
+      {locale === "ar" && <Questions questions={questions} />}
 
-      <Footer dir={dir.data.dir} />
+      <Footer dir={dir?.data?.dir} />
     </>
   );
 }

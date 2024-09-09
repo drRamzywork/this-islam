@@ -11,8 +11,8 @@ import { IoArrowUp } from 'react-icons/io5';
 import { RiMenuAddLine } from "react-icons/ri";
 
 
-const Questions = ({ dir
-  , questions }) => {
+const Questions = ({
+  questions }) => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const data = [
@@ -33,7 +33,7 @@ const Questions = ({ dir
 
   return (
     <>
-      <section id='prophet' className={styles.prophet} dir={dir}>
+      <section id='prophet' className={styles.prophet} >
         <div className="container">
 
           <motion.div

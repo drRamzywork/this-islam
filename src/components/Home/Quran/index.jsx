@@ -3,18 +3,18 @@ import { IoArrowUp } from 'react-icons/io5';
 import styles from './index.module.scss';
 import { motion } from 'framer-motion';
 
-const Quran = ({ quran, title_main1, title_main2, dir, read_moreBtn }) => {
+const quran = ({ quran, title_main1, title_main2, dir, read_moreBtn }) => {
 
-  const title = quran.section_1.title;
-  const desc = quran.section_1.text;
+  const title = quran?.section_1?.title;
+  const desc = quran?.section_1?.text;
 
-  const title_2 = quran.section_2.title;
-  const desc_2 = quran.section_2.text;
-  const img_2 = quran.section_2.image;
+  const title_2 = quran?.section_2?.title;
+  const desc_2 = quran?.section_2?.text;
+  const img_2 = quran?.section_2?.image;
 
-  const title_3 = quran.section_3.title;
-  const desc_3 = quran.section_3.text;
-  const img_3 = quran.section_3.image;
+  const title_3 = quran?.section_3?.title;
+  const desc_3 = quran?.section_3?.text;
+  const img_3 = quran?.section_3?.image;
 
   return (
     <>
@@ -138,7 +138,7 @@ const Quran = ({ quran, title_main1, title_main2, dir, read_moreBtn }) => {
                   whileInView={{ x: 0 }}
                   exit={{ scale: 0 }}
                   transition={{ duration: 1, type: "tween" }} className={styles.desc}>
-                  <p>{desc_3.replace(/&nbsp;/g, " ")}</p>
+                  <p>{desc_3?.replace(/&nbsp;/g, " ")}</p>
                   <div className={styles.button_container}>
                     <p>{read_moreBtn}</p>
 
@@ -160,4 +160,4 @@ const Quran = ({ quran, title_main1, title_main2, dir, read_moreBtn }) => {
   )
 }
 
-export default Quran
+export default quran;

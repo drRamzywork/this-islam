@@ -27,39 +27,22 @@ const breakpoints = {
 
 };
 
-
-
 const Prophet = ({ mohamed, whoIsMohamed, mohamedSights, mohamedStories, mohameSaying, desMohamed }) => {
   const swiperRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
-  const data = [{ title: whoIsMohamed.title, img: whoIsMohamed.image, desc: whoIsMohamed.short_intro }, { title: mohamedSights.title, img: mohamedSights.image, desc: mohamedSights.short_intro }, { title: mohamedStories.title, img: mohamedStories.image, desc: mohamedStories.short_intro }, { title: mohameSaying.title, img: mohameSaying.image, desc: mohameSaying.short_intro }, { title: desMohamed.title, img: desMohamed.image, desc: desMohamed.short_intro }]
-
-
-
-
+  const data = [{ title: whoIsMohamed?.title, img: whoIsMohamed?.image, desc: whoIsMohamed?.short_intro }, { title: mohamedSights?.title, img: mohamedSights?.image, desc: mohamedSights?.short_intro }, { title: mohamedStories?.title, img: mohamedStories?.image, desc: mohamedStories?.short_intro }, { title: mohameSaying?.title, img: mohameSaying?.image, desc: mohameSaying?.short_intro }, { title: desMohamed?.title, img: desMohamed?.image, desc: desMohamed?.short_intro }]
 
   const handleSlideChange = (swiper) => {
     setActiveSlide(swiper.activeIndex);
   };
-
 
   const handleSlideClick = (index) => {
     swiperRef?.current?.slideTo(index);
     setActiveSlide(index);
   };
 
-  const handleSectionClick = (index) => {
-    setActiveSection(index);
-    setActiveSlide(index);
-    if (swiperRef.current) {
-      swiperRef.current.slideTo(index);
-    }
-  };
-
-
-  const [title_1, ...rest] = mohamed.split(' ');
-
-  const title_2 = rest.join(' ');
+  const [title_1, ...rest] = mohamed?.split(' ') || [];;
+  const title_2 = rest?.join(' ');
 
   return (
     <>
@@ -83,7 +66,8 @@ const Prophet = ({ mohamed, whoIsMohamed, mohamedSights, mohamedStories, mohameS
 
               <div className={styles.desc}>
                 <p>
-                  الرسول محمد ﷺ هو خاتم الأنبياء، أرسله الله رحمةً للعالمين ليخرج البشرية من الظلمات إلى النور، وقد بلغ رسالة الإسلام بصدق وأمانة، وهو القدوة الكاملة في الأخلاق والتواضع والعدل.                </p>
+                  الرسول محمد ﷺ هو خاتم الأنبياء، أرسله الله رحمةً للعالمين ليخرج البشرية من الظلمات إلى النور، وقد بلغ رسالة الإسلام بصدق وأمانة، وهو القدوة الكاملة في الأخلاق والتواضع والعدل.
+                </p>
 
               </div>
             </motion.div>

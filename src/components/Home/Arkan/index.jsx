@@ -12,16 +12,16 @@ import Kaaba from '@/public/assets/svgs/Kaaba'
 const Arkan = ({ arkan, home, arkanDesc, testimonyTitle }) => {
   const [activeIndex, setActiveIndex] = useState(1);
 
-  const title = arkan.children[0].title.replace(/:/g, " ");
-  const title1 = home.quran.islam[0].title;
-  const title2 = home.quran.islam[1].title.replace(/:/g, " ");
-  const title3 = home.quran.islam[2].title;
-  const title4 = home.quran.islam[3].title;
+  const title = arkan?.children[0].title.replace(/:/g, " ");
+  const title1 = home?.quran?.islam[0]?.title;
+  const title2 = home?.quran?.islam[1]?.title.replace(/:/g, " ");
+  const title3 = home?.quran?.islam[2]?.title;
+  const title4 = home?.quran?.islam[3]?.title;
 
-  const desc1 = home.quran.islam[0].text;
-  const desc2 = home.quran.islam[1].text.replace(/:/g, " ");
-  const desc3 = home.quran.islam[2].text;
-  const desc4 = home.quran.islam[3].text;
+  const desc1 = home?.quran?.islam[0]?.text;
+  const desc2 = home?.quran?.islam[1]?.text.replace(/:/g, " ");
+  const desc3 = home?.quran?.islam[2]?.text;
+  const desc4 = home?.quran?.islam[3]?.text;
 
   const data = [
     { title: title1, desc: desc1, icon: <Pray /> },
