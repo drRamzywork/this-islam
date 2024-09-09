@@ -69,7 +69,7 @@ const Arkan = ({ arkan, home, arkanDesc, testimonyTitle }) => {
 
             <motion.div className={styles.content_container}
               initial={{ opacity: 0, y: 500 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, type: 'tween' }}>
               {data.map((box, idx) =>
                 <motion.div className={`${styles.icons_section} ${idx === activeIndex && styles.active}`} key={idx} onClick={() => hanldeClick(idx)}>

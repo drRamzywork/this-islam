@@ -47,6 +47,7 @@ export default function Data({
   const read_moreBtn = allWords?.read_more;
   const arkanDesc = allWords?.arkan_desc;
   const testimonyTitle = allWords?.testimony;
+  const prophetDesc = allWords?.prophet_desc;
 
   return (
     <>
@@ -167,6 +168,7 @@ export default function Data({
         mohamedStories={mohamedStories?.parent}
         mohameSaying={mohameSaying?.parent}
         desMohamed={desMohamed?.parent}
+        prophetDesc={prophetDesc}
       />
       {locale === "ar" && <Questions questions={questions} />}
 

@@ -27,7 +27,7 @@ const breakpoints = {
 
 };
 
-const Prophet = ({ mohamed, whoIsMohamed, mohamedSights, mohamedStories, mohameSaying, desMohamed }) => {
+const Prophet = ({ mohamed, whoIsMohamed, mohamedSights, mohamedStories, mohameSaying, desMohamed, prophetDesc }) => {
   const swiperRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const data = [{ title: whoIsMohamed?.title, img: whoIsMohamed?.image, desc: whoIsMohamed?.short_intro }, { title: mohamedSights?.title, img: mohamedSights?.image, desc: mohamedSights?.short_intro }, { title: mohamedStories?.title, img: mohamedStories?.image, desc: mohamedStories?.short_intro }, { title: mohameSaying?.title, img: mohameSaying?.image, desc: mohameSaying?.short_intro }, { title: desMohamed?.title, img: desMohamed?.image, desc: desMohamed?.short_intro }]
@@ -66,7 +66,7 @@ const Prophet = ({ mohamed, whoIsMohamed, mohamedSights, mohamedStories, mohameS
 
               <div className={styles.desc}>
                 <p>
-                  الرسول محمد ﷺ هو خاتم الأنبياء، أرسله الله رحمةً للعالمين ليخرج البشرية من الظلمات إلى النور، وقد بلغ رسالة الإسلام بصدق وأمانة، وهو القدوة الكاملة في الأخلاق والتواضع والعدل.
+                  {prophetDesc}
                 </p>
 
               </div>
@@ -134,7 +134,6 @@ const Prophet = ({ mohamed, whoIsMohamed, mohamedSights, mohamedStories, mohameS
           </div>
 
         </div>
-
       </section>
     </>
   )
