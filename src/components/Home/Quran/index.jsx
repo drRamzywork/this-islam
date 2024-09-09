@@ -3,14 +3,24 @@ import { IoArrowUp } from 'react-icons/io5';
 import styles from './index.module.scss';
 import { motion } from 'framer-motion';
 
-const Quran = () => {
+const Quran = ({ quran, title_main1, title_main2, dir, read_moreBtn }) => {
+
+  const title = quran.section_1.title;
+  const desc = quran.section_1.text;
+
+  const title_2 = quran.section_2.title;
+  const desc_2 = quran.section_2.text;
+  const img_2 = quran.section_2.image;
+
+  const title_3 = quran.section_3.title;
+  const desc_3 = quran.section_3.text;
+  const img_3 = quran.section_3.image;
+
   return (
     <>
-      <section id='quran' className={styles.quran} dir='rtl'>
-
+      <section id='quran' className={styles.quran} dir={dir}>
         <div className="container">
           <div className={styles.sec_container}>
-
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -19,21 +29,23 @@ const Quran = () => {
               className={styles.text_container}>
 
               <div className={styles.title}>
-                <h2> <span>القرآن</span> الكريم</h2>
-
+                <h2>
+                  <span>{title_main1}</span>
+                  {` `}
+                  {title_main2}
+                </h2>
                 <div className={styles.icon_container}>
                   <img src="/assets/svgs/sec_icon_title.svg" alt="" />
+
                 </div>
               </div>
 
               <div className={styles.desc}>
-                <p>ما هو القرآن الكريم الذي كثيراً ما يتصدر أعلى الكتب مبيعاً وتوزيعاً حول العالم؟ ويؤمن به ما يزيد عن مليار ونصف مسلم؟</p>
+                <p>{desc}</p>
               </div>
 
             </motion.div>
-
             <div className={styles.content_container}>
-
               <div className={styles.text_container}>
                 <motion.div initial={{ x: -50 }}
                   whileInView={{ x: 0 }}
@@ -42,17 +54,30 @@ const Quran = () => {
                   <div className={styles.icon_container}>
                     <img src="/assets/svgs/title_icon.svg" alt="" />
                   </div>
-                  <h3>من أين جاء القرأن</h3>
+                  <h3>{title_2}</h3>
+
+
                 </motion.div>
+
+                <div className="mobile">
+                  <motion.div initial={{ scale: 0.5, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0 }}
+                    transition={{ duration: 1, type: "tween" }} className={styles.img_container}>
+                    <img src={img_2} alt="" />
+                  </motion.div>
+
+                </div>
+
 
                 <motion.div initial={{ x: 50 }}
                   whileInView={{ x: 0 }}
                   exit={{ scale: 0 }}
                   transition={{ duration: 1, type: "tween" }} className={styles.desc}>
-                  <p>             سؤال منطقي يتبادر للذهن مباشرة عند الحديث عن كتاب المسلمين المقدس: القرآن، ومحمد عليه الصلاة والسلام.. فلماذا علينا قبول رواية المسلمين حول القصة؟ ألا يحق لنا طرح الأسئلة حول ذلك؟ لا يختلف المؤرخون أن القرآن جاء على لسان رجل عربي، لا يقرأ ولا يكتب .........</p>
+                  <p>{desc_2}</p>
 
                   <div className={styles.button_container}>
-                    <p>اقرأ المزيد</p>
+                    <p>{read_moreBtn}</p>
 
                     <div className={styles.icon_container}>
                       <IoArrowUp />
@@ -62,26 +87,31 @@ const Quran = () => {
                 </motion.div>
               </div>
 
-              <motion.div initial={{ scale: 0.5, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0 }}
-                transition={{ duration: 1, type: "tween" }} className={styles.img_container}>
-                <img src="/assets/imgs/5.jpeg" alt="" />
-              </motion.div>
+
+
+              <div className="desktop">
+                <motion.div initial={{ scale: 0.5, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0 }}
+                  transition={{ duration: 1, type: "tween" }} className={styles.img_container}>
+                  <img src={img_2} alt="" />
+                </motion.div>
+              </div>
 
             </div>
-
-
             <div className={styles.content_container}>
 
-              <motion.div
-                initial={{ scale: 0.5, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0 }}
-                transition={{ duration: 1, type: "tween" }}
-                className={styles.img_container}>
-                <img src="/assets/imgs/6.jpeg" alt="" />
-              </motion.div>
+              <div className="desktop">
+
+                <motion.div
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0 }}
+                  transition={{ duration: 1, type: "tween" }}
+                  className={styles.img_container}>
+                  <img src={img_3} alt="" />
+                </motion.div>
+              </div>
 
               <div className={styles.text_container}>
                 <motion.div initial={{ x: -50 }}
@@ -91,17 +121,26 @@ const Quran = () => {
                   <div className={styles.icon_container}>
                     <img src="/assets/svgs/title_icon.svg" alt="" />
                   </div>
-                  <h3> القرآن معجزة الاسلام الخالدة</h3>
+                  <h3>{title_3}</h3>
                 </motion.div>
+                <div className="mobile">
+                  <motion.div
+                    initial={{ scale: 0.5, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0 }}
+                    transition={{ duration: 1, type: "tween" }}
+                    className={styles.img_container}>
+                    <img src={img_3} alt="" />
+                  </motion.div>
+                </div>
 
                 <motion.div initial={{ x: 50 }}
                   whileInView={{ x: 0 }}
                   exit={{ scale: 0 }}
                   transition={{ duration: 1, type: "tween" }} className={styles.desc}>
-                  <p>
-                    ما هو القرآن الذي يؤمن به ما يزيد عن مليار ونصف مسلم؟ القرآن هو كتاب المسلمين المقدس الذي يؤمنون بأنه;كلام الله المنزل على رسوله محمد عليه السلام هداية للناس ونوراً خاتم الكتب السماوية المنزلة المحفوظ من التبديل والتحريف;المتعبد بتلاوته وحفظه.                  </p>
+                  <p>{desc_3.replace(/&nbsp;/g, " ")}</p>
                   <div className={styles.button_container}>
-                    <p>اقرأ المزيد</p>
+                    <p>{read_moreBtn}</p>
 
                     <div className={styles.icon_container}>
                       <IoArrowUp />
@@ -114,10 +153,8 @@ const Quran = () => {
               </div>
 
             </div>
-
           </div>
         </div>
-
       </section>
     </>
   )

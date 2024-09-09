@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import styles from './index.module.scss'
-const Footer = () => {
+const Footer = ({ dir }) => {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} dir={dir}>
       <div className="container">
 
         <div className={styles.sec_container}>

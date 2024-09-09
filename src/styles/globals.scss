@@ -78,5 +78,14 @@ a {
   }
 }
 
-// .Hero_active__JPcd0 {
-// }
+.mobile {
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+}
+
+.desktop {
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}

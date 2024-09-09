@@ -6,9 +6,70 @@ nav.navbar {
   width: 100%;
   z-index: 1000;
   transition: top 0.3s;
-
   background: linear-gradient(#000000a2, hsla(0, 0%, 100%, 0));
 
+  .menu_container {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 500px;
+    height: 100vh;
+    background-color: white;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .close_btn {
+      cursor: pointer;
+      align-self: flex-end;
+      // padding: ;
+      padding-top: 24px;
+      padding-left: 24px;
+    }
+    ul {
+      padding: 0;
+      li {
+        list-style-type: none;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        padding-right: 24px;
+        border-bottom: 1px solid var(--main-blue);
+        cursor: pointer;
+        a {
+          color: var(--main-blue);
+          text-decoration: none;
+          color: unset;
+          font-size: var(--size-20);
+          font-weight: 700;
+        }
+
+        &.active {
+          background-color: var(--main-blue);
+
+          a {
+            color: white;
+          }
+        }
+
+        &:hover {
+          background-color: #fffbe9;
+        }
+      }
+    }
+  }
+
+  .layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 444;
+    background: #00000042;
+    /* opacity: 0.5; */
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(2px);
+  }
   .sec_container {
     display: flex;
     align-items: center;
@@ -28,10 +89,34 @@ nav.navbar {
       align-items: center;
       gap: 16px;
       .icon_container {
+        cursor: pointer;
         svg {
           color: white;
           width: 48px;
           height: 48px;
+        }
+      }
+    }
+  }
+}
+
+nav.navbar[dir="ltr"] {
+  .menu_container {
+    right: unset;
+    left: 0;
+
+    .close_btn {
+      padding-top: 24px;
+      padding-left: 0;
+      padding-right: 24px;
+    }
+    ul {
+      padding: 0;
+      li {
+        padding-bottom: 24px;
+        padding-right: 0;
+        padding-left: 24px;
+        a {
         }
       }
     }
@@ -57,6 +142,38 @@ nav.navbar {
             color: white;
             width: 28px;
             height: 28px;
+          }
+        }
+      }
+    }
+
+    .menu_container {
+      width: 280px;
+
+      .close_btn {
+        width: 70px;
+        height: 70px;
+        img {
+          width: 100%;
+          object-fit: cover;
+          height: 100%;
+        }
+      }
+
+      ul {
+        padding: 0;
+        li {
+          list-style-type: none;
+          padding-top: 24px;
+          padding-bottom: 24px;
+          padding-right: 24px;
+          border-bottom: 1px solid var(--main-blue);
+          a {
+            color: var(--main-blue);
+            text-decoration: none;
+            color: unset;
+            font-size: 16px;
+            font-weight: 700;
           }
         }
       }

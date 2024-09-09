@@ -11,7 +11,6 @@ import 'swiper/css/pagination';
 import { motion } from 'framer-motion';
 import { FaHandPointUp } from 'react-icons/fa';
 
-
 const initialCards = [
   { desc: 'تعتبر فلسفة الخطأ والصواب أحد أهم الإشكالات الفكرية في عدد من الديانات والعقائد، وتختلف تلك العقائد فيما بينها في طريقة تعاملها مع الخطأ والذنب والتوبة والندم. وينظر الإسلام بميزان دقيق إلى الطبيعة البشرية التي خلقها الله وجعل فيها نوازع الخير والشر، فهو لا يتعامل معها باعتبارها مَلَكاً', img: '/assets/imgs/home_screen5.png', id: 1, title: 'الخطيئة والتوبة' },
 
@@ -24,7 +23,6 @@ const initialCards = [
 
   { desc: 'يصدق القول في كثير من الأسر في العصر الحاضر أنها عبارة عن مجموعة من الأفراد لديهم مفاتيح متعددة لبيت واحد وصار كثير من الأشخاص للأسف يتهرب من تحمل مسؤولية حقيقية تجاه زوجة أو أولاد، فما الذي يمنعه من أن يستمتع ويقضي ملذاته بدون تحمل تلك المسؤولية؟', img: '/assets/imgs/home_screen1.png', id: 5, title: 'الأسرة في الإسلام' },
 ];
-
 
 const breakpoints = {
   1: {
@@ -42,9 +40,8 @@ const breakpoints = {
   1300: { slidesPerView: 4.1 },
 }
 
-
-
-const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, contentJesus, contentSin, dir }) => {
+const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, contentJesus, contentSin, dir
+}) => {
   const [isSwiperInitialized, setIsSwiperInitialized] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);

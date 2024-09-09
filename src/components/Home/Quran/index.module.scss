@@ -1,5 +1,8 @@
 section.quran {
   margin-top: 120px;
+  p {
+    margin: 0;
+  }
   .sec_container {
     .text_container {
       margin-bottom: 100px;
@@ -31,7 +34,6 @@ section.quran {
       }
       .desc {
         margin-top: 32px;
-        max-width: 90%;
         p {
           font-weight: 700;
           font-size: 32px;
@@ -58,7 +60,7 @@ section.quran {
           flex-direction: row;
           h3 {
             color: var(--sec-green);
-            font-size: 40px;
+            font-size: 38px;
             font-weight: 700;
           }
           .icon_container {
@@ -116,8 +118,162 @@ section.quran {
   }
 }
 
+section.quran[dir="ltr"] {
+  p {
+  }
+  .sec_container {
+    .text_container {
+      .title {
+        h2 {
+        }
+
+        h2,
+        span {
+        }
+
+        .icon_container {
+          img {
+          }
+        }
+      }
+      .desc {
+        p {
+        }
+      }
+    }
+
+    .content_container {
+      .text_container {
+        .title {
+          h3 {
+          }
+          .icon_container {
+            img {
+            }
+          }
+        }
+
+        .desc {
+          p {
+          }
+          .button_container {
+            p {
+            }
+
+            .icon_container {
+              transform: rotate(90deg);
+              svg {
+              }
+            }
+          }
+        }
+      }
+
+      .img_container {
+        img {
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 450px) {
   section.quran {
-    display: none;
+    margin-top: 60px;
+    p {
+      margin: 0;
+    }
+    .sec_container {
+      .text_container {
+        margin-bottom: 40px;
+        .title {
+          h2 {
+            font-size: 24px;
+          }
+
+          h2,
+          span {
+            font-size: 24px;
+          }
+
+          .icon_container {
+            img {
+            }
+          }
+        }
+        .desc {
+          margin-top: 16px;
+          p {
+            font-size: 16px;
+            line-height: 28px;
+          }
+        }
+      }
+
+      .content_container {
+        flex-direction: column-reverse;
+        margin-bottom: 0px;
+        .text_container {
+          max-width: 100%;
+          order: 1;
+          .title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-direction: row;
+            margin-bottom: 24px;
+            h3 {
+              font-size: 20px;
+            }
+            .icon_container {
+              img {
+              }
+            }
+          }
+
+          .desc {
+            max-width: unset;
+            margin-bottom: 16px;
+
+            p {
+              font-weight: 400;
+              font-size: 16px;
+              text-align: justify;
+            }
+            .button_container {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+
+              p {
+                color: var(--sec-green);
+                font-size: 24px;
+                font-weight: 400;
+                line-height: unset;
+              }
+
+              .icon_container {
+                margin-top: 5px;
+                svg {
+                  color: var(--sec-green);
+                  transform: rotate(-45deg);
+                  width: 20px;
+                  height: 20px;
+                }
+              }
+            }
+          }
+        }
+
+        .img_container {
+          width: 100%;
+          height: 200px;
+          border-radius: 16px;
+
+          img {
+          }
+        }
+      }
+    }
   }
 }
