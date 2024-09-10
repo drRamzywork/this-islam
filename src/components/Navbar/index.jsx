@@ -89,8 +89,7 @@ const Navbar = ({ allTopics, allLangs, dir }) => {
         </motion.div>
       }
       {
-        topicsMenu | LangsMenu &&
-
+        (topicsMenu || LangsMenu) &&
         <div className={styles.layer} onClick={() => {
           setTopicsMenu(false);
           setLangsMenu(false);

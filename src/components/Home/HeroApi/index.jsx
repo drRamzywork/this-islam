@@ -9,7 +9,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { motion } from 'framer-motion';
-import { FaHandPointUp } from 'react-icons/fa';
 
 const initialCards = [
   { desc: 'تعتبر فلسفة الخطأ والصواب أحد أهم الإشكالات الفكرية في عدد من الديانات والعقائد، وتختلف تلك العقائد فيما بينها في طريقة تعاملها مع الخطأ والذنب والتوبة والندم. وينظر الإسلام بميزان دقيق إلى الطبيعة البشرية التي خلقها الله وجعل فيها نوازع الخير والشر، فهو لا يتعامل معها باعتبارها مَلَكاً', img: '/assets/imgs/home_screen5.png', id: 1, title: 'الخطيئة والتوبة' },
@@ -143,7 +142,7 @@ const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, con
             },
           }}
           dir={dir}
-          centeredSlides={true}
+          // centeredSlides={true}
           // spaceBetween={16}
           // slidesPerView={4.1}
           breakpoints={breakpoints}

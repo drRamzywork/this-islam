@@ -46,6 +46,9 @@ footer.footer {
       color: var(--main-white);
       font-weight: 400;
       font-size: var(--size-20);
+      @media screen and (max-width: 992px) {
+        font-size: 12px;
+      }
     }
   }
 }

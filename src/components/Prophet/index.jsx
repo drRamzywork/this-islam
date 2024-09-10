@@ -27,7 +27,7 @@ const breakpoints = {
 
 };
 
-const Prophet = ({ mohamed, whoIsMohamed, mohamedSights, mohamedStories, mohameSaying, desMohamed, prophetDesc }) => {
+const Prophet = ({ dir, mohamed, whoIsMohamed, mohamedSights, mohamedStories, mohameSaying, desMohamed, prophetDesc }) => {
   const swiperRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const data = [{ title: whoIsMohamed?.title, img: whoIsMohamed?.image, desc: whoIsMohamed?.short_intro }, { title: mohamedSights?.title, img: mohamedSights?.image, desc: mohamedSights?.short_intro }, { title: mohamedStories?.title, img: mohamedStories?.image, desc: mohamedStories?.short_intro }, { title: mohameSaying?.title, img: mohameSaying?.image, desc: mohameSaying?.short_intro }, { title: desMohamed?.title, img: desMohamed?.image, desc: desMohamed?.short_intro }]
@@ -46,7 +46,7 @@ const Prophet = ({ mohamed, whoIsMohamed, mohamedSights, mohamedStories, mohameS
 
   return (
     <>
-      <section id='prophet' className={styles.prophet}>
+      <section id='prophet' className={styles.prophet} dir={dir}>
         <div className="container">
 
           <div className={styles.sec_container}>
@@ -76,7 +76,7 @@ const Prophet = ({ mohamed, whoIsMohamed, mohamedSights, mohamedStories, mohameS
               <Swiper
                 spaceBetween={24}
                 pagination={{ clickable: true }}
-                dir="rtl"
+                dir={dir}
                 modules={[Navigation, FreeMode]}
                 initialSlide={1}
                 onSwiper={(swiper) => swiperRef.current = swiper}

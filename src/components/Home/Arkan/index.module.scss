@@ -175,19 +175,18 @@ section.arkan {
           right: 50%;
           transform: 0;
         }
-      }
 
-      .active {
-        .circle_container {
-          background-color: var(--sec-green);
-          * {
-            color: var(--main-white) !important;
-          }
-
-          .icon {
-            svg {
-              path {
-                fill: white !important;
+        &.active {
+          .circle_container {
+            background-color: var(--sec-green);
+            h6 {
+              color: white;
+            }
+            .icon {
+              svg {
+                path {
+                  fill: white;
+                }
               }
             }
           }
@@ -226,6 +225,9 @@ section.arkan {
       }
       .icon_container {
         svg {
+          path {
+            fill: var(--sec-green);
+          }
           // background-color: var(--sec-green);
         }
       }
@@ -359,7 +361,6 @@ section.arkan {
             cursor: pointer;
             .icon {
               svg {
-                background-color: var(--sec-green);
                 width: 25px;
                 height: 25px;
               }
@@ -367,12 +368,6 @@ section.arkan {
 
             h6 {
               font-size: 16px;
-            }
-
-            &:hover {
-              * {
-                color: var(--main-white) !important;
-              }
             }
           }
           .line {
@@ -393,8 +388,8 @@ section.arkan {
             background-color: var(--main-white);
             opacity: 0.4;
             width: 4px;
-            height: 190px;
-            bottom: -232%;
+            height: 109px;
+            bottom: -162%;
             right: 50%;
             transform: 0;
           }
@@ -402,6 +397,14 @@ section.arkan {
 
         .active {
           .circle_container {
+            h6 {
+              color: var(--main-white);
+            }
+            svg {
+              path {
+                fill: var(--main-white);
+              }
+            }
           }
         }
       }
@@ -435,7 +438,6 @@ section.arkan {
 
         .icon_container {
           svg {
-            background-color: var(--sec-green);
             width: 24px;
             height: 24px;
           }
