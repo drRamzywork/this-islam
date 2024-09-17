@@ -7,6 +7,7 @@ import Questions from "@/components/Home/Questions";
 import Prophet from "@/components/Prophet";
 import Arkan from "@/components/Home/Arkan";
 import { useRouter } from "next/router";
+import Arkan2 from "@/components/Home/Arkan2";
 
 export default function Data({
   homeData,
@@ -152,12 +153,11 @@ export default function Data({
         read_moreBtn={read_moreBtn}
       />
 
-      <Arkan
+      <Arkan2
         dir={dir?.data?.dir}
         arkan={arkan}
         home={home}
         testimonyTitle={testimonyTitle}
-        arkanDesc={arkanDesc}
       />
 
       <Prophet

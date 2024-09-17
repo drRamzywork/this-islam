@@ -38,7 +38,6 @@ const Arkan = ({ arkan, home, arkanDesc, testimonyTitle }) => {
 
 
 
-
   return (
     <>
       <section id='arkan' className={styles.arkan}>
