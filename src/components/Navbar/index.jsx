@@ -5,6 +5,7 @@ import { MdLanguage } from "react-icons/md";
 import SimpleBar from 'simplebar-react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 const Navbar = ({ allTopics, allLangs, dir }) => {
   const { locale, asPath } = useRouter()
   const [topicsMenu, setTopicsMenu] = useState(false);
@@ -50,9 +51,9 @@ const Navbar = ({ allTopics, allLangs, dir }) => {
             <ul>
               {allTopics.map((topic, idx) =>
                 <li key={idx}>
-                  <a href="#">
+                  <Link href={`/${topic.slug}`}>
                     {topic.title}
-                  </a>
+                  </Link>
                 </li>
               )}
             </ul>

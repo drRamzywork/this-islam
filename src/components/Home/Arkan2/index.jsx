@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './index.module.scss'
 import { IoArrowUp } from 'react-icons/io5'
 import Pray from '@/public/assets/svgs/Pray'
@@ -10,7 +10,6 @@ import Kaaba from '@/public/assets/svgs/Kaaba'
 
 
 const Arkan2 = ({ arkan, home, testimonyTitle, dir }) => {
-  const [activeIndex, setActiveIndex] = useState(1);
 
   const title = arkan?.parent?.title?.replace(/:/g, " ");
   const sectionDesc = arkan?.parent?.short_intro?.replace(/:/g, " ");
@@ -37,8 +36,7 @@ const Arkan2 = ({ arkan, home, testimonyTitle, dir }) => {
     },
   ]
 
-  const hanldeClick = (index) => { setActiveIndex(index) }
-  console.log(arkan?.children[0]?.body_object[0]?.paragraph.content, "arkan?.children[0]?.body_object[0]?.paragraph")
+
 
   return (
     <>

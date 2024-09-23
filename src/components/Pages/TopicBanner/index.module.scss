@@ -1,0 +1,51 @@
+section.topic_banner {
+  position: relative;
+  height: 550px;
+  padding-top: 250px;
+  .images_container {
+    .banner {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .lines {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      img {
+      }
+    }
+  }
+
+  .text_container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    max-width: 857px;
+
+    .title {
+      h1 {
+        font-weight: 700;
+        font-size: 48px;
+        color: #9b7b36;
+        margin: 0;
+        margin-bottom: 32px;
+      }
+    }
+
+    .desc {
+      p {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 400;
+        color: white;
+      }
+    }
+  }
+}
