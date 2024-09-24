@@ -15,7 +15,9 @@ const Topic = ({ dir,
         allLangs={allLangs?.data}
         allTopics={allTopics?.data} />
       <section className='topic'>
+
         <TopicBanner contentData={contentData} />
+
         <TopicContent contentData={contentData} />
 
       </section>

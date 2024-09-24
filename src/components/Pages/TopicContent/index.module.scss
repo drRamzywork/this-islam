@@ -1,0 +1,111 @@
+section.topic_content {
+  background-color: #fffbe9;
+  margin-top: 120px;
+  .sec_container {
+    margin-bottom: 48px;
+    border: 1px solid #9b7b36;
+    box-shadow: 0px 1px 2px 0px #0000004d;
+    padding: 32px;
+    border-radius: 24px;
+
+    .first_p_list {
+      .title {
+        h3 {
+          margin: 0;
+          color: #092e47;
+          font-weight: 700;
+          font-size: 32px;
+        }
+      }
+      .desc {
+        margin-top: 32px;
+        p {
+          margin: 0;
+          color: black;
+          font-size: 24px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .topic_img {
+      margin-top: 32px;
+      margin-bottom: 32px;
+      img {
+        width: 100%;
+        height: 883px;
+        object-fit: cover;
+        border-radius: 24px;
+      }
+    }
+
+    .p_list {
+      margin-top: 24px;
+      .title {
+        h3 {
+          margin: 0;
+          color: #9b7b36;
+          font-weight: 700;
+          font-size: 24px;
+        }
+      }
+      .desc {
+        p {
+          margin: 0;
+          color: black;
+          font-size: 24px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .sec_container2 {
+    margin-bottom: 48px;
+    border: 1px solid #9b7b36;
+    box-shadow: 0px 1px 2px 0px #0000004d;
+    border-radius: 24px;
+    padding-top: 0;
+
+    .title_bg {
+      border-radius: 24px 24px 1px 0px;
+      width: 100%;
+      text-align: center;
+      background-color: #092e47;
+      padding: 48px 24px;
+      h3 {
+        color: white;
+        margin: 0;
+        font-size: 40px;
+        font-weight: 700;
+      }
+    }
+    .content_container_bg {
+      padding: 32px;
+
+      .ol_list {
+        margin-top: 48px;
+        .title {
+          width: fit-content;
+          background-color: #fff4c7;
+          border-radius: 12px;
+          padding: 24px;
+          h3 {
+            margin: 0;
+            font-size: 40px;
+            font-weight: 700;
+            color: #092e47;
+          }
+        }
+
+        .desc {
+          p {
+            color: black;
+            font-size: 24px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
