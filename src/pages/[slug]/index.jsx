@@ -8,6 +8,8 @@ const Topic = ({ dir,
   allLangs,
   allTopics,
   contentData }) => {
+
+
   return (
     <>
       <Navbar

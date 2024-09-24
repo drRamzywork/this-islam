@@ -1,0 +1,43 @@
+.custom_desc {
+  color: #9b7b36;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.title {
+  span {
+    background-color: var(--main-blue);
+    color: white;
+    font-size: 40px;
+    // padding: 10px;
+    width: 70px;
+    display: block;
+    text-align: center;
+
+    border-radius: 12px 12px 0px 0px;
+  }
+
+  h6 {
+    background-color: #9b7b36;
+    color: white;
+    width: fit-content;
+    padding: 25px;
+    border-radius: 12px 0px 12px 12px;
+    font-size: 24px;
+  }
+}
+
+.lists {
+  margin-top: 40px;
+  ul {
+    padding-right: 24px;
+    li {
+      padding-right: 0px;
+      margin: 0;
+      font-size: 20px;
+      font-weight: 400;
+      color: black;
+      margin-bottom: 24px;
+    }
+  }
+}
