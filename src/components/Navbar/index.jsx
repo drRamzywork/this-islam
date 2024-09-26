@@ -7,17 +7,17 @@ import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 const Navbar = ({ allTopics, allLangs, dir }) => {
-  const { locale, asPath } = useRouter()
+  const { locale, asPath, query } = useRouter()
   const [topicsMenu, setTopicsMenu] = useState(false);
   const [LangsMenu, setLangsMenu] = useState(false);
-
+  const slug = query.slug;
   return (
     <nav id='navbar' className={styles.navbar} dir={dir}>
       <div className="container">
         <div className={styles.sec_container}>
-          <div className={styles.logo}>
+          <Link href={'/'} className={styles.logo}>
             <img src="/assets/imgs/white_logo.png" alt="logo this is islam" />
-          </div>
+          </Link>
 
           <div className={styles.settings_container}>
             <div className={styles.icon_container} onClick={() => setTopicsMenu(prev => !prev)}>
@@ -50,7 +50,7 @@ const Navbar = ({ allTopics, allLangs, dir }) => {
           >
             <ul>
               {allTopics.map((topic, idx) =>
-                <li key={idx}>
+                <li key={idx} className={topic.slug === slug && styles.active}>
                   <Link href={`/${topic.slug}`}>
                     {topic.title}
                   </Link>
