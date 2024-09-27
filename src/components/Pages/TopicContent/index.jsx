@@ -39,14 +39,6 @@ const TopicContent = ({ contentData }) => {
         <div className="container">
 
 
-          {!topic2 === slug || !topic4 === slug &&
-            <>
-
-
-
-
-            </>
-          }
 
 
 
@@ -126,7 +118,7 @@ const TopicContent = ({ contentData }) => {
           }
 
           {topic2 === slug &&
-            <Topic2 childrens={childrens} />
+            <Topic2 childrens={childrens} parent={parent} />
           }
 
 

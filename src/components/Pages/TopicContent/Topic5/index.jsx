@@ -2,10 +2,9 @@ import React from 'react'
 import styles from '../index.module.scss';
 import styles3 from '../Topic3/index.module.scss';
 
-const Topic5 = ({ bodyObject, childrens, topicImage }) => {
+const Topic5 = ({ childrens, topicImage }) => {
 
 
-  console.log(childrens, 'childrens')
 
   return (
     <>
