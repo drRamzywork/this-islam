@@ -77,15 +77,16 @@ const Topic2 = ({ childrens, parent }) => {
                   } */}
 
 
-                  {child.body_object.map((elm) =>
+                  {child.body_object.map((elm, indexx) =>
                     elm.paragraph ? (
                       <p
-
+                        key={indexx}
                       >
                         {elm.paragraph.content}
                       </p>
                     ) : elm.ol_li ? (
                       <li
+                        key={indexx + 1}
 
                       >
                         <span
@@ -125,9 +126,9 @@ const Topic2 = ({ childrens, parent }) => {
                           </strong>
                           {Array.isArray(elm?.ul_li?.content) ? (
                             <div>
-                              {elm?.ul_li?.content.map((subElm) => (
+                              {elm?.ul_li?.content.map((subElm, subIdx) => (
                                 <li
-
+                                  key={subIdx}
                                 >
                                   <span
 
