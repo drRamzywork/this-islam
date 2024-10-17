@@ -56,6 +56,11 @@ section.topic_banner {
     }
 
     .desc {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 3;
       p {
         margin: 0;
         font-size: 24px;

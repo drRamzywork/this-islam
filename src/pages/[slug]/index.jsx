@@ -106,9 +106,10 @@ const Topic = ({ dir,
         allTopics={allTopics?.data} />
       <section className='topic'>
 
-        <TopicBanner contentData={contentData} />
 
-        <TopicContent contentData={contentData} />
+        <TopicBanner contentData={contentData} dir={dir?.data?.dir} />
+
+        <TopicContent contentData={contentData} dir={dir?.data?.dir} />
 
       </section>
       <Footer />

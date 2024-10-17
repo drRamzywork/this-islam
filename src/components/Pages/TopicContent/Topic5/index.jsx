@@ -20,7 +20,7 @@ const Topic5 = ({ childrens, topicImage }) => {
 
 
 
-          {childrens.map((topic, idx) => (
+          {childrens?.map((topic, idx) => (
             <div className={styles.ol_list} key={idx}>
 
               <div className={styles.title}>

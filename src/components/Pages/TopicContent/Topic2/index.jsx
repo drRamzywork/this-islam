@@ -24,7 +24,6 @@ const Topic2 = ({ childrens, parent }) => {
   };
 
 
-
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -36,11 +35,11 @@ const Topic2 = ({ childrens, parent }) => {
       <>
 
         <div className={styles2.sec_container3}>
-          {childrens.map((child, idx) => (
+          {childrens?.map((child, idx) => (
             <div className={styles2.box} key={idx}>
               <div className={styles2.header_box}>
 
-                {child.left_image &&
+                {child?.left_image &&
                   <div className={styles2.img_container}>
                     <img src={child.left_image} alt="" />
                   </div>
@@ -63,6 +62,90 @@ const Topic2 = ({ childrens, parent }) => {
                       </p>
                     </div>
                   }
+
+
+                  <p dangerouslySetInnerHTML={{ __html: getPTagContent(child.childrens, idx) }}></p>
+
+                  <p dangerouslySetInnerHTML={{ __html: getPTagContent(child.childrens, idx) }}></p>
+
+                  {/* {console.log(child.body_object, "child.childrens")} */}
+
+                  {/* {child.body_object &&
+                    child.body_object.map((body, index) =>
+                      <p key={index}>{console.log(body.map((p) => p), "child.childrens 2")}</p>
+                    )
+                  } */}
+
+
+                  {child.body_object.map((elm) =>
+                    elm.paragraph ? (
+                      <p
+
+                      >
+                        {elm.paragraph.content}
+                      </p>
+                    ) : elm.ol_li ? (
+                      <li
+
+                      >
+                        <span
+
+                        >
+                          <strong
+
+                          >
+                            {elm?.ol_li?.title}
+                          </strong>{" "}
+                          {elm?.ol_li?.content}
+                        </span>
+                      </li>
+                    ) : elm.list_p ? (
+                      <div>
+                        <p
+
+                        >
+                          {elm.list_p.title_bold}
+                        </p>
+                        <p
+
+                        >
+                          {elm.list_p.content}
+                        </p>
+                      </div>
+                    ) : elm.ul_li ? (
+                      <li
+
+                      >
+                        <span
+
+                        >
+                          <strong
+                          >
+                            {/* {elm?.ul_li?.title} */}
+                          </strong>
+                          {Array.isArray(elm?.ul_li?.content) ? (
+                            <div>
+                              {elm?.ul_li?.content.map((subElm) => (
+                                <li
+
+                                >
+                                  <span
+
+                                  >
+                                    {subElm}
+                                  </span>
+                                </li>
+                              ))}
+
+                            </div>
+                          ) : (
+
+                            elm.ul_li.content
+                          )}
+                        </span>
+                      </li>
+                    ) : null
+                  )}
 
                 </div>
 

@@ -32,7 +32,7 @@ export default function Data({
   allLangs,
 }) {
   const { locale } = useRouter();
-  const imagePath = `/assets/imgs/white_logo.png`;
+  const imagePath = `    nbh/assets/imgs/white_logo.png`;
   const SiteDescription = siteInfo?.description;
   const cleanedQuranDesc = contentQuran?.parent?.short_intro;
   const quranDesc = cleanedQuranDesc?.replace(/&nbsp;/g, " ");

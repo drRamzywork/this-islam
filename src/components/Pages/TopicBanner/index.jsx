@@ -1,13 +1,13 @@
 import React from 'react'
 import styles from './index.module.scss'
-const TopicBanner = ({ contentData }) => {
+const TopicBanner = ({ contentData, dir }) => {
   const topicImage = contentData?.parent?.image;
 
   const parent = contentData.parent;
 
   return (
     <>
-      <section className={styles.topic_banner}>
+      <section className={styles.topic_banner} dir={dir}>
         <div className={styles.images_container}>
           <div className={styles.banner}>
             {/* <img src="/assets/imgs/banner.png" alt="" /> */}

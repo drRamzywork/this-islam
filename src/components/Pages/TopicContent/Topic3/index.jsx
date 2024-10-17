@@ -31,7 +31,7 @@ const Topic3 = ({ bodyObject, childrens, topicImage }) => {
           </div>
 
 
-          {childrenMain.map((topic, idx) => (
+          {childrenMain?.map((topic, idx) => (
             <div className={styles.ol_list} key={idx}>
 
               <div className={styles.title}>

@@ -19,6 +19,7 @@ nav.navbar {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+
     .close_btn {
       cursor: pointer;
       align-self: flex-end;
@@ -26,6 +27,7 @@ nav.navbar {
       padding-top: 24px;
       padding-left: 24px;
     }
+
     ul {
       padding: 0;
       li {

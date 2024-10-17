@@ -6,15 +6,21 @@ const Topic4 = ({ bodyObject, childrens, topicImage }) => {
 
 
 
-
-
+  // { console.log(bodyObject[1]?.list_p?.title_bold, "bodyObject[1]?.list_p?.title_bold") }
 
   return (
     <>
       <div className={styles.sec_container2}>
         <div className={styles.title_bg}>
           <h3>
-            {bodyObject[1]?.list_p?.title_bold?.replace(/:/g, " ")}
+            {
+              bodyObject[1]?.list_p?.title_bold === undefined ?
+                bodyObject[0]?.list_p?.title_bold?.replace(/:/g, " ")
+                :
+                bodyObject[1]?.list_p?.title_bold?.replace(/:/g, " ")
+
+
+            }
           </h3>
 
         </div>
@@ -37,11 +43,13 @@ const Topic4 = ({ bodyObject, childrens, topicImage }) => {
                 case 'paragraph':
                   return (
                     <p key={index} className={styles.list_desc}>{item.paragraph.content} </p>
+
                   );
                 case 'list_p':
                   return (
                     <div key={index} className={styles.desc_title}>
                       <strong>{item.list_p.title_bold}</strong>
+                      <p>{item.list_p.content}</p>
                     </div>
                   );
                 case 'ul_li':

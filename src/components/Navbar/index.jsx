@@ -6,12 +6,14 @@ import SimpleBar from 'simplebar-react';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+
 const Navbar = ({ allTopics, allLangs, dir }) => {
   const { locale, asPath, query } = useRouter()
   const [topicsMenu, setTopicsMenu] = useState(false);
   const [LangsMenu, setLangsMenu] = useState(false);
   const slug = query.slug;
   return (
+
     <nav id='navbar' className={styles.navbar} dir={dir}>
       <div className="container">
         <div className={styles.sec_container}>
@@ -51,7 +53,7 @@ const Navbar = ({ allTopics, allLangs, dir }) => {
             <ul>
               {allTopics.map((topic, idx) =>
                 <li key={idx} className={topic.slug === slug && styles.active}>
-                  <Link href={`/${topic.slug}`}>
+                  <Link href={`/${topic.slug}`} onClick={() => setTopicsMenu(false)}>
                     {topic.title}
                   </Link>
                 </li>
@@ -89,6 +91,7 @@ const Navbar = ({ allTopics, allLangs, dir }) => {
           </SimpleBar>
         </motion.div>
       }
+
       {
         (topicsMenu || LangsMenu) &&
         <div className={styles.layer} onClick={() => {
