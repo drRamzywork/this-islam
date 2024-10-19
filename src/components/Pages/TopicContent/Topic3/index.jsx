@@ -3,7 +3,7 @@ import styles from '../index.module.scss';
 import styles3 from './index.module.scss';
 
 
-const Topic3 = ({ bodyObject, childrens, topicImage }) => {
+const Topic3 = ({ bodyObject, childrens, topicImage, dir }) => {
 
 
   const subTopic = childrens?.filter((c) => c?.id === 68)[0];
@@ -14,7 +14,7 @@ const Topic3 = ({ bodyObject, childrens, topicImage }) => {
 
   return (
     <>
-      <div className={styles.sec_container2}>
+      <div className={styles.sec_container2} dir={dir}>
         <div className={styles.title_bg}>
           <h3>
             {bodyObject[1]?.list_p?.title_bold?.replace(/:/g, " ")}
@@ -70,7 +70,7 @@ const Topic3 = ({ bodyObject, childrens, topicImage }) => {
                 <>
 
                   <div className={styles3.lists}>
-                    <div className={styles3.title}>
+                    <div className={styles3.title} dir={dir}>
                       <span>{1}</span>
                       <h6>
                         {subTopic?.title?.replace(/:/g, " ")}
@@ -89,7 +89,7 @@ const Topic3 = ({ bodyObject, childrens, topicImage }) => {
 
                   <div className={styles3.lists}>
 
-                    <div className={styles3.title}>
+                    <div className={styles3.title} dir={dir}>
                       <span>{2}</span>
                       <h6>
                         {subTopic2?.title?.replace(/:/g, " ")}
@@ -107,7 +107,7 @@ const Topic3 = ({ bodyObject, childrens, topicImage }) => {
                   </div>
 
 
-                  <div className={styles3.title}>
+                  <div className={styles3.title} dir={dir}>
                     <span>{3}</span>
                     <h6>
                       {subTopic3?.title?.replace(/:/g, " ")}

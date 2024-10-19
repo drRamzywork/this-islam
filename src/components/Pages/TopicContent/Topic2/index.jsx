@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles2 from './index.module.scss'
 
-const Topic2 = ({ childrens, parent }) => {
+const Topic2 = ({ childrens, dir }) => {
 
 
   // const getSecondPTagContent = (htmlString) => {
@@ -34,7 +34,7 @@ const Topic2 = ({ childrens, parent }) => {
     return (
       <>
 
-        <div className={styles2.sec_container3}>
+        <div className={styles2.sec_container3} dir={dir}>
           {childrens?.map((child, idx) => (
             <div className={styles2.box} key={idx}>
               <div className={styles2.header_box}>

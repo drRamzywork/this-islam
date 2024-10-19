@@ -2,13 +2,13 @@ import React from 'react'
 import styles from '../index.module.scss';
 import styles3 from '../Topic3/index.module.scss';
 
-const Topic5 = ({ childrens, topicImage }) => {
+const Topic5 = ({ childrens, topicImage, dir }) => {
 
 
 
   return (
     <>
-      <div className={styles.sec_container2}>
+      <div className={styles.sec_container2} dir={dir}>
 
 
 

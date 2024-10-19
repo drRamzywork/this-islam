@@ -8,7 +8,7 @@ import Topic5 from './Topic5';
 
 
 
-const TopicContent = ({ contentData }) => {
+const TopicContent = ({ contentData, dir }) => {
   const topicImage = contentData?.parent?.image;
 
   const parent = contentData.parent;
@@ -38,11 +38,13 @@ const TopicContent = ({ contentData }) => {
   const topic14 = 'women-in-islam';
   const topic15 = 'islamic-dietary-laws';
   const topic16 = 'is-there-really-a-dichotomy-between-religion-and-reason';
+  const topic17 = 'sin-and-repentance';
+  const topic18 = 'a-new-perspective';
 
 
 
 
-  const topics = [topic1, topic2, topic3, topic4, topic5, topic6, topic7, topic8, topic9, topic10, topic11, topic12, topic13, topic14, topic15, topic16]
+  const topics = [topic1, topic2, topic3, topic4, topic5, topic6, topic7, topic8, topic9, topic10, topic11, topic12, topic13, topic14, topic15, topic16, topic17, topic18]
 
 
 
@@ -52,16 +54,13 @@ const TopicContent = ({ contentData }) => {
         <div className="container">
 
 
-
-
-
           {
             slug === topic1
             &&
 
             <>
 
-              < div className={styles.sec_container}>
+              < div className={styles.sec_container} dir={dir}>
 
                 <div className={styles.first_p_list}>
                   <div className={styles.title}>
@@ -96,7 +95,7 @@ const TopicContent = ({ contentData }) => {
               </div>
 
 
-              <div className={styles.sec_container2}>
+              <div className={styles.sec_container2} dir={dir}>
                 <div className={styles.title_bg}>
                   <h3>{childTitle}</h3>
                 </div>
@@ -131,7 +130,7 @@ const TopicContent = ({ contentData }) => {
           }
 
           {topic2 === slug &&
-            <Topic2 childrens={childrens} parent={parent} />
+            <Topic2 childrens={childrens} parent={parent} dir={dir} />
           }
 
 
@@ -139,58 +138,58 @@ const TopicContent = ({ contentData }) => {
 
 
           {topic3 === slug &&
-            <Topic3 bodyObject={bodyObject} childrens={childrens} topicImage={topicImage} />
+            <Topic3 bodyObject={bodyObject} childrens={childrens} topicImage={topicImage} dir={dir} />
           }
 
 
           {topic4 === slug &&
-            <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} />
+            <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} dir={dir} />
           }
 
           {/* All Topics */}
           {!topics.find(topic => topic === slug) && (
             <>
-              <Topic2 childrens={childrens} parent={parent} />
-              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} />
+              <Topic2 childrens={childrens} parent={parent} dir={dir} />
+              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} dir={dir} />
             </>
           )}
 
           {topic7 === slug &&
             <>
-              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} />
-              <Topic2 childrens={childrens} parent={parent} />
+              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} dir={dir} />
+              <Topic2 childrens={childrens} parent={parent} dir={dir} />
             </>
           }
 
           {topic8 === slug &&
             <>
-              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} />
-              <Topic5 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} parent={parent} />
+              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} dir={dir} />
+              <Topic5 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} parent={parent} dir={dir} />
 
             </>
           }
           {topic9 === slug &&
             <>
-              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} />
-              <Topic2 childrens={childrens} parent={parent} />
+              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} dir={dir} />
+              <Topic2 childrens={childrens} parent={parent} dir={dir} />
 
             </>}
           {topic10 === slug &&
             <>
-              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} />
+              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} dir={dir} />
 
-              <Topic2 childrens={childrens} parent={parent} />
+              <Topic2 childrens={childrens} parent={parent} dir={dir} />
             </>
           }
           {topic11 === slug &&
             <>
-              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} />
-              <Topic2 childrens={childrens} parent={parent} />
+              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} dir={dir} />
+              <Topic2 childrens={childrens} parent={parent} dir={dir} />
             </>
           }
           {topic12 === slug &&
             <>
-              <Topic2 childrens={childrens} parent={parent} />
+              <Topic2 childrens={childrens} parent={parent} dir={dir} />
 
 
 
@@ -233,21 +232,31 @@ const TopicContent = ({ contentData }) => {
 
           {topic13 === slug &&
             <>
-              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} />
+              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} dir={dir} />
 
-              <Topic2 childrens={childrens} parent={parent} />
+              <Topic2 childrens={childrens} parent={parent} dir={dir} />
 
             </>
           }
 
-          {topic14 === slug || topic15 === slug || topic16 === slug &&
+
+          {(slug === 'topic14' || slug === 'topic15' || slug === 'topic16') && (
             <>
-              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} />
-
-              <Topic2 childrens={childrens} parent={parent} />
-
+              <Topic4
+                childrens={childrens}
+                bodyObject={bodyObject}
+                firstPList={firstPList}
+                topicImage={topicImage}
+                dir={dir}
+              />
+              <Topic2
+                childrens={childrens}
+                parent={parent}
+                dir={dir}
+              />
             </>
-          }
+          )}
+
 
 
 
@@ -256,10 +265,25 @@ const TopicContent = ({ contentData }) => {
 
 
           {topic5 === slug || topic6 === slug &&
-            <Topic5 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} parent={parent} />
+            <Topic5 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} parent={parent} dir={dir} />
           }
 
+          {(slug === topic5 || slug === topic6) && (
+            <Topic5 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} parent={parent} dir={dir} />
 
+          )}
+
+
+          {topic17 === slug &&
+            <>
+              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} dir={dir} />
+            </>
+          }
+          {topic18 === slug &&
+            <>
+              <Topic4 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} dir={dir} />
+            </>
+          }
         </div>
       </section >
     </>

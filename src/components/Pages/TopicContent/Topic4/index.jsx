@@ -2,15 +2,14 @@ import React from 'react'
 import styles from './index.module.scss';
 
 
-const Topic4 = ({ bodyObject, childrens, topicImage }) => {
+const Topic4 = ({ bodyObject, dir, topicImage }) => {
 
 
 
-  // { console.log(bodyObject[1]?.list_p?.title_bold, "bodyObject[1]?.list_p?.title_bold") }
 
   return (
     <>
-      <div className={styles.sec_container2}>
+      <div className={styles.sec_container2} dir={dir}>
         <div className={styles.title_bg}>
           <h3>
             {
