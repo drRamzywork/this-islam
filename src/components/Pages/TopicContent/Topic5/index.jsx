@@ -4,7 +4,7 @@ import styles3 from '../Topic3/index.module.scss';
 
 const Topic5 = ({ childrens, topicImage, dir }) => {
 
-
+  console.log("topi5", 'topic5')
 
   return (
     <>
@@ -40,7 +40,7 @@ const Topic5 = ({ childrens, topicImage, dir }) => {
               {topic?.body_object?.map((obj) => (
                 <>
                   {obj?.ul_li?.content &&
-                    <div className={styles3.lists}>
+                    <div className={styles3.lists} dir={dir}>
                       <ul>
                         <li>{obj?.ul_li?.content}</li>
                       </ul>

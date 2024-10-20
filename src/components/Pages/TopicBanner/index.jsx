@@ -19,7 +19,7 @@ const TopicBanner = ({ contentData, dir }) => {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container h-100 d-flex">
           <div className={styles.text_container}>
             <div className={styles.title}>
               <h1>{parent.title}</h1>

@@ -64,19 +64,11 @@ const Topic2 = ({ childrens, dir }) => {
                   }
 
 
-                  <p dangerouslySetInnerHTML={{ __html: getPTagContent(child.childrens, idx) }}></p>
-
-                  <p dangerouslySetInnerHTML={{ __html: getPTagContent(child.childrens, idx) }}></p>
-
-                  {/* {console.log(child.body_object, "child.childrens")} */}
-
-                  {/* {child.body_object &&
-                    child.body_object.map((body, index) =>
-                      <p key={index}>{console.log(body.map((p) => p), "child.childrens 2")}</p>
-                    )
-                  } */}
+                  {/* <p dangerouslySetInnerHTML={{ __html: getPTagContent(child.childrens, idx) }}></p> */}
 
 
+
+                  {/* 
                   {child.body_object.map((elm, indexx) =>
                     elm.paragraph ? (
                       <p
@@ -84,7 +76,7 @@ const Topic2 = ({ childrens, dir }) => {
                       >
                         {elm.paragraph.content}
                       </p>
-                    ) : elm.ol_li ? (
+                    ) : elm?.ol_li ? (
                       <li
                         key={indexx + 1}
 
@@ -100,20 +92,20 @@ const Topic2 = ({ childrens, dir }) => {
                           {elm?.ol_li?.content}
                         </span>
                       </li>
-                    ) : elm.list_p ? (
+                    ) : elm?.list_p ? (
                       <div>
                         <p
 
                         >
-                          {elm.list_p.title_bold}
+                          {elm?.list_p.title_bold}
                         </p>
                         <p
 
                         >
-                          {elm.list_p.content}
+                          {elm?.list_p.content}
                         </p>
                       </div>
-                    ) : elm.ul_li ? (
+                    ) : elm?.ul_li ? (
                       <li
 
                       >
@@ -122,7 +114,7 @@ const Topic2 = ({ childrens, dir }) => {
                         >
                           <strong
                           >
-                            {/* {elm?.ul_li?.title} */}
+                            {elm?.ul_li?.title}
                           </strong>
                           {Array.isArray(elm?.ul_li?.content) ? (
                             <div>
@@ -146,7 +138,7 @@ const Topic2 = ({ childrens, dir }) => {
                         </span>
                       </li>
                     ) : null
-                  )}
+                  )} */}
 
                 </div>
 

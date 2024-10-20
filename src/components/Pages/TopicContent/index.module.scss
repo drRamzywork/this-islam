@@ -2,14 +2,27 @@ section.topic_content {
   background-color: #fffbe9;
   margin-top: 120px;
 
+  @media screen and (max-width: 992px) {
+    margin-top: 24px;
+  }
+
   .topic_img {
     margin-top: 32px;
     margin-bottom: 32px;
+
+    @media screen and (max-width: 992px) {
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
     img {
       width: 100%;
       height: 883px;
       object-fit: cover;
       border-radius: 24px;
+
+      @media screen and (max-width: 992px) {
+        height: 207px;
+      }
     }
   }
   .sec_container {
@@ -18,6 +31,11 @@ section.topic_content {
     box-shadow: 0px 1px 2px 0px #0000004d;
     padding: 32px;
     border-radius: 24px;
+    @media screen and (max-width: 992px) {
+      padding: 16px;
+      margin-bottom: 16px;
+      border-radius: 12px;
+    }
 
     .first_p_list {
       .title {
@@ -41,12 +59,16 @@ section.topic_content {
 
     .p_list {
       margin-top: 24px;
+
       .title {
         h3 {
           margin: 0;
           color: #9b7b36;
           font-weight: 700;
           font-size: 24px;
+          @media screen and (max-width: 992px) {
+            font-size: 19px;
+          }
         }
       }
       .desc {
@@ -55,6 +77,9 @@ section.topic_content {
           color: black;
           font-size: 24px;
           font-weight: 400;
+          @media screen and (max-width: 992px) {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -67,34 +92,61 @@ section.topic_content {
     border-radius: 24px;
     padding-top: 0;
 
+    @media screen and (max-width: 992px) {
+      border-radius: 12px;
+    }
+
     .title_bg {
       border-radius: 24px 24px 1px 0px;
       width: 100%;
       text-align: center;
       background-color: #092e47;
       padding: 48px 24px;
+      @media screen and (max-width: 992px) {
+        border-radius: 12px 12px 1px 0px;
+        padding: 16px;
+      }
       h3 {
         color: white;
         margin: 0;
         font-size: 40px;
         font-weight: 700;
+        @media screen and (max-width: 992px) {
+          font-size: 24px;
+        }
       }
     }
     .content_container_bg {
       padding: 32px;
 
+      @media screen and (max-width: 992px) {
+        padding: 16px;
+      }
+
       .ol_list {
         margin-top: 48px;
+        @media screen and (max-width: 992px) {
+          margin-top: 16px;
+        }
+
         .title {
           width: fit-content;
           background-color: #fff4c7;
           border-radius: 12px;
           padding: 24px;
+
+          @media screen and (max-width: 992px) {
+            padding: 16px;
+          }
+
           h3 {
             margin: 0;
             font-size: 40px;
             font-weight: 700;
             color: #092e47;
+            @media screen and (max-width: 992px) {
+              font-size: 20px;
+            }
           }
         }
 
@@ -103,6 +155,11 @@ section.topic_content {
             color: black;
             font-size: 24px;
             font-weight: 400;
+
+            @media screen and (max-width: 992px) {
+              font-size: 16px;
+              text-align: justify;
+            }
           }
         }
       }

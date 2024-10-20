@@ -270,7 +270,6 @@ const TopicContent = ({ contentData, dir }) => {
 
           {(slug === topic5 || slug === topic6) && (
             <Topic5 childrens={childrens} bodyObject={bodyObject} firstPList={firstPList} topicImage={topicImage} parent={parent} dir={dir} />
-
           )}
 
 

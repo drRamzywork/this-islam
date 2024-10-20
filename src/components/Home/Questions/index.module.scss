@@ -129,7 +129,9 @@ section.prophet {
         border-radius: 24px;
         display: block;
         overflow: hidden;
-
+        @media screen and (max-width: 992px) {
+          border-radius: 12px;
+        }
         position: relative;
         z-index: 999;
 

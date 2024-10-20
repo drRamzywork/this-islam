@@ -11,7 +11,6 @@ const Topic3 = ({ bodyObject, childrens, topicImage, dir }) => {
   const subTopic3 = childrens?.filter((c) => c?.id === 70)[0];
   const childrenMain = childrens?.filter((c) => c?.id !== 70 & c?.id !== 68 & c?.id !== 69);
 
-
   return (
     <>
       <div className={styles.sec_container2} dir={dir}>
@@ -46,7 +45,7 @@ const Topic3 = ({ bodyObject, childrens, topicImage, dir }) => {
               {topic?.body_object?.map((obj) => (
                 <>
                   {obj?.ul_li?.content &&
-                    <div className={styles3.lists}>
+                    <div className={styles3.lists} dir={dir}>
                       <ul>
                         <li>{obj?.ul_li?.content}</li>
                       </ul>
@@ -69,7 +68,7 @@ const Topic3 = ({ bodyObject, childrens, topicImage, dir }) => {
 
                 <>
 
-                  <div className={styles3.lists}>
+                  <div className={styles3.lists} dir={dir} >
                     <div className={styles3.title} dir={dir}>
                       <span>{1}</span>
                       <h6>
@@ -87,7 +86,7 @@ const Topic3 = ({ bodyObject, childrens, topicImage, dir }) => {
                   </div>
 
 
-                  <div className={styles3.lists}>
+                  <div className={styles3.lists} dir={dir}>
 
                     <div className={styles3.title} dir={dir}>
                       <span>{2}</span>

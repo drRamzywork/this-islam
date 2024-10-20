@@ -2,6 +2,12 @@
   color: #9b7b36;
   font-size: 18px;
   font-weight: 400;
+
+  @media screen and (max-width: 992px) {
+    font-size: 16px;
+    text-align: justify;
+    display: block;
+  }
 }
 
 .title {
@@ -15,6 +21,12 @@
     text-align: center;
 
     border-radius: 12px 12px 0px 0px;
+
+    @media screen and (max-width: 992px) {
+      padding: 8px;
+      width: 61px;
+      font-size: 24px;
+    }
   }
 
   h6 {
@@ -24,13 +36,25 @@
     padding: 25px;
     border-radius: 12px 0px 12px 12px;
     font-size: 24px;
+
+    @media screen and (max-width: 992px) {
+      padding: 16px;
+      font-size: 20px;
+    }
   }
 }
 
 .lists {
   margin-top: 40px;
+  @media screen and (max-width: 992px) {
+    margin-top: 24px;
+  }
   ul {
+    padding: 0;
     padding-right: 24px;
+    @media screen and (max-width: 992px) {
+      padding-right: 16px;
+    }
     li {
       padding-right: 0px;
       margin: 0;
@@ -38,6 +62,9 @@
       font-weight: 400;
       color: black;
       margin-bottom: 24px;
+      @media screen and (max-width: 992px) {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -47,5 +74,19 @@
 .title[dir="ltr"] {
   h6 {
     border-radius: 0px 12px 12px 12px;
+  }
+}
+
+.lists[dir="ltr"] {
+  ul {
+    padding: 0;
+    padding-right: unset;
+    padding-left: 24px;
+
+    @media screen and (max-width: 992px) {
+      padding-left: 16px;
+    }
+    li {
+    }
   }
 }
