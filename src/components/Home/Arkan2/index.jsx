@@ -7,6 +7,7 @@ import Hand from '@/public/assets/svgs/Hand'
 import Meal from '@/public/assets/svgs/Meal'
 import Moon from '@/public/assets/svgs/Moon'
 import Kaaba from '@/public/assets/svgs/Kaaba'
+import Link from 'next/link'
 
 
 const Arkan2 = ({ arkan, home, testimonyTitle, dir }) => {
@@ -49,7 +50,7 @@ const Arkan2 = ({ arkan, home, testimonyTitle, dir }) => {
 
 
 
-        <div className={styles.sec_container}>
+        <Link href={`/the-true-reality-of-worship-in-islam`} target='_blank' className={styles.sec_container}>
           <div className="container">
 
             <motion.div
@@ -126,7 +127,7 @@ const Arkan2 = ({ arkan, home, testimonyTitle, dir }) => {
 
           </div>
 
-        </div>
+        </Link>
 
       </section >
     </>

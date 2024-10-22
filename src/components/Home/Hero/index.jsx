@@ -4,7 +4,7 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { IoArrowUp } from "react-icons/io5";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -42,7 +42,7 @@ const breakpoints = {
   1300: { slidesPerView: 4.1 },
 }
 
-const HeroApi = () => {
+const Hero = () => {
   const [isSwiperInitialized, setIsSwiperInitialized] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -96,7 +96,7 @@ const HeroApi = () => {
       <div className={`${styles.swiper_container} ${isActive ? styles.active : ''}`}>
         <Swiper
           ref={swiperRef}
-          modules={[Pagination, Navigation]}
+          modules={[Pagination, Navigation, Autoplay]}
           navigation={{
             prevEl: prevRef.current,
             nextEl: nextRef.current,
@@ -131,6 +131,16 @@ const HeroApi = () => {
               swiper.navigation.update();
             }
           }}
+
+
+
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+
+          speed={2000}
+
         >
 
           {initialCards?.map((card, index) => (
@@ -248,4 +258,4 @@ const HeroApi = () => {
   )
 }
 
-export default HeroApi;
+export default Hero;

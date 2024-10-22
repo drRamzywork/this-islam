@@ -4,11 +4,12 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { IoArrowUp } from "react-icons/io5";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const initialCards = [
   { desc: 'تعتبر فلسفة الخطأ والصواب أحد أهم الإشكالات الفكرية في عدد من الديانات والعقائد، وتختلف تلك العقائد فيما بينها في طريقة تعاملها مع الخطأ والذنب والتوبة والندم. وينظر الإسلام بميزان دقيق إلى الطبيعة البشرية التي خلقها الله وجعل فيها نوازع الخير والشر، فهو لا يتعامل معها باعتبارها مَلَكاً', img: '/assets/imgs/home_screen5.png', id: 1, title: 'الخطيئة والتوبة' },
@@ -39,7 +40,7 @@ const breakpoints = {
   1300: { slidesPerView: 4.1 },
 }
 
-const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, contentJesus, contentSin, dir
+const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, contentJesus, contentSin, dir, read_moreBtn
 }) => {
   const [isSwiperInitialized, setIsSwiperInitialized] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -127,7 +128,7 @@ const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, con
       <div className={`${styles.swiper_container} ${isActive ? styles.active : ''}`}>
         <Swiper
           ref={swiperRef}
-          modules={[Pagination, Navigation]}
+          modules={[Pagination, Autoplay, Navigation]}
           navigation={{
             prevEl: prevRef.current,
             nextEl: nextRef.current,
@@ -142,10 +143,17 @@ const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, con
             },
           }}
           dir={dir}
-          // centeredSlides={true}
+          centeredSlides={true}
           // spaceBetween={16}
           // slidesPerView={4.1}
           breakpoints={breakpoints}
+
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+
+          speed={2000}
 
           className={styles.swiper}
           initialSlide={activeIndex}
@@ -215,12 +223,12 @@ const HeroApi = ({ contentFamily, homeData, contentPeace, contentOneCreator, con
               </motion.div>
               {/*   }*/}
 
-              <div className={styles.read_more}>
-                <p>إقرأ المزيد</p>
+              <Link target='_blank' href={carouselItems[activeIndex].path} className={styles.read_more}>
+                <p>{read_moreBtn}</p>
                 <div className="icon_container">
                   <IoArrowUp />
                 </div>
-              </div>
+              </Link>
 
 
 

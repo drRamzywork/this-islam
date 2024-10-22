@@ -16,17 +16,17 @@ const Questions = ({
   const [activeSlide, setActiveSlide] = useState(0);
 
   const data = [
-    { title: questions.parent.body_object[1]?.list_p?.title_bold || questions.parent.body_object[2]?.list_p?.title_bold, },
-    { title: questions.parent.body_object[2]?.list_p?.title_bold || questions.parent.body_object[2]?.paragraph?.title_bold, },
-    { title: questions.parent.body_object[3]?.list_p?.title_bold || questions.parent.body_object[2]?.list_p?.title_bold, },
-    { title: questions.parent.body_object[4]?.list_p?.title_bold || questions.parent.body_object[2]?.list_p?.title_bold, },
+    { title: questions?.parent.body_object[1]?.list_p?.title_bold || questions?.parent.body_object[2]?.list_p?.title_bold, },
+    { title: questions?.parent.body_object[2]?.list_p?.title_bold || questions?.parent.body_object[2]?.paragraph?.title_bold, },
+    { title: questions?.parent.body_object[3]?.list_p?.title_bold || questions?.parent.body_object[2]?.list_p?.title_bold, },
+    { title: questions?.parent.body_object[4]?.list_p?.title_bold || questions?.parent.body_object[2]?.list_p?.title_bold, },
   ]
 
   const handleSlideClick = (index) => {
     setActiveSlide(index);
   };
 
-  const secTitle = questions.parent.title;
+  const secTitle = questions?.parent.title;
   const words = secTitle.replace(/\.+$/, "").split(" ");
   const firstWord = words[0];
   const restOfTitle = words.slice(1).join(" ");
@@ -51,7 +51,7 @@ const Questions = ({
 
             <div className={styles.desc}>
               <p>
-                {questions.parent.short_intro}
+                {questions?.parent.short_intro}
               </p>
             </div>
           </motion.div>

@@ -142,6 +142,7 @@ export default function Data({
         contentJesus={contentJesus}
         contentSin={contentSin}
         dir={dir?.data?.dir}
+        read_moreBtn={read_moreBtn}
       />
 
       <Quran
@@ -169,6 +170,7 @@ export default function Data({
         mohameSaying={mohameSaying?.parent}
         desMohamed={desMohamed?.parent}
         prophetDesc={prophetDesc}
+        read_moreBtn={read_moreBtn}
       />
       {locale === "ar" && <Questions questions={questions} />}
 

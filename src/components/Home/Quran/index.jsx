@@ -2,6 +2,7 @@ import React from 'react';
 import { IoArrowUp } from 'react-icons/io5';
 import styles from './index.module.scss';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const quran = ({ quran, title_main1, title_main2, dir, read_moreBtn }) => {
 
@@ -15,6 +16,7 @@ const quran = ({ quran, title_main1, title_main2, dir, read_moreBtn }) => {
   const title_3 = quran?.section_3?.title;
   const desc_3 = quran?.section_3?.text;
   const img_3 = quran?.section_3?.image;
+
 
   return (
     <>
@@ -76,13 +78,13 @@ const quran = ({ quran, title_main1, title_main2, dir, read_moreBtn }) => {
                   transition={{ duration: 1, type: "tween" }} className={styles.desc}>
                   <p>{desc_2}</p>
 
-                  <div className={styles.button_container}>
+                  <Link target='_blank' href={`/where-does-the-quran-come-from`} className={styles.button_container}>
                     <p>{read_moreBtn}</p>
 
                     <div className={styles.icon_container}>
                       <IoArrowUp />
                     </div>
-                  </div>
+                  </Link>
 
                 </motion.div>
               </div>
@@ -139,13 +141,13 @@ const quran = ({ quran, title_main1, title_main2, dir, read_moreBtn }) => {
                   exit={{ scale: 0 }}
                   transition={{ duration: 1, type: "tween" }} className={styles.desc}>
                   <p>{desc_3?.replace(/&nbsp;/g, " ")}</p>
-                  <div className={styles.button_container}>
+                  <Link target='_blank' href={`/the-quran-the-eternal-miracle-of-islam`} className={styles.button_container}>
                     <p>{read_moreBtn}</p>
 
                     <div className={styles.icon_container}>
                       <IoArrowUp />
                     </div>
-                  </div>
+                  </Link>
 
                 </motion.div>
 

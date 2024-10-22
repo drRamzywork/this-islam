@@ -250,6 +250,7 @@ section.hero {
           align-items: center;
           gap: 8px;
           cursor: pointer;
+          text-decoration: none;
 
           p {
             font-size: var(--size-24);
@@ -678,6 +679,7 @@ section.hero[dir="ltr"] {
           p {
           }
           svg {
+            transform: rotate(45deg);
           }
 
           p,

@@ -152,6 +152,7 @@ section.prophet {
             display: flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
             p {
               color: var(--sec-green);
               font-size: 24px;
@@ -275,6 +276,85 @@ section.prophet {
                 width: 16px;
                 height: 16px;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.prophet[dir="ltr"] {
+  .sec_container {
+    .text_container {
+      .title {
+        h2 {
+          span {
+          }
+        }
+
+        h2,
+        span {
+        }
+
+        .icon_container {
+          img {
+          }
+        }
+      }
+      .desc {
+        p {
+        }
+      }
+    }
+
+    .swiper_container {
+      .box_container {
+        .title {
+          p {
+          }
+        }
+      }
+
+      .box_container.active {
+        .title {
+          p {
+          }
+        }
+      }
+
+      .active_section {
+        .img_container {
+          img {
+          }
+        }
+
+        .text_container {
+          .title {
+            h3 {
+            }
+          }
+          .desc {
+            p {
+            }
+            .button_container {
+              p {
+              }
+
+              .icon_container {
+                svg {
+                }
+              }
+            }
+          }
+
+          .button_container {
+            cursor: pointer;
+            p {
+            }
+
+            svg {
+              transform: rotate(45deg);
             }
           }
         }
