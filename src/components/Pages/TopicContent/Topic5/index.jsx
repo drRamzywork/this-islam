@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../index.module.scss';
 import styles3 from '../Topic3/index.module.scss';
+import { motion } from 'framer-motion';
 
 const Topic5 = ({ childrens, topicImage, dir }) => {
 
@@ -14,28 +15,52 @@ const Topic5 = ({ childrens, topicImage, dir }) => {
 
         <div className={styles.content_container_bg}>
 
-          <div className={styles.topic_img}>
+          <motion.div
+            transition={{
+              type: "spring",
+              duration: 2.4
+            }}
+
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 1 }} className={styles.topic_img}>
             <img src={topicImage} alt="" />
-          </div>
+          </motion.div>
 
 
 
           {childrens?.map((topic, idx) => (
             <div className={styles.ol_list} key={idx}>
 
-              <div className={styles.title}>
+              <motion.div
+                transition={{
+                  type: "spring",
+                  duration: 2.4
+                }}
+
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 1 }} className={styles.title}>
                 <h3>{topic?.title?.replace(/:/g, " ")}</h3>
-              </div>
+              </motion.div>
 
 
-              <div className={styles.desc}>
+              <motion.div
+                transition={{
+                  type: "spring",
+                  duration: 1.4
+                }}
+
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 1 }} className={styles.desc}>
                 <p>{topic?.quotations}</p>
                 <p>
                   {topic?.body_without_tags}
                 </p>
 
 
-              </div>
+              </motion.div>
 
               {topic?.body_object?.map((obj) => (
                 <>
@@ -54,9 +79,17 @@ const Topic5 = ({ childrens, topicImage, dir }) => {
               ))}
 
               {topic.body_image &&
-                <div className={styles.topic_img}>
+                <motion.div
+                  transition={{
+                    type: "spring",
+                    duration: 2.4
+                  }}
+
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 1 }} className={styles.topic_img}>
                   <img src={topic.body_image} alt="" />
-                </div>
+                </motion.div>
               }
 
               <span className={styles3.custom_desc}>

@@ -12,6 +12,8 @@ const Navbar = ({ allTopics, allLangs, dir }) => {
   const [topicsMenu, setTopicsMenu] = useState(false);
   const [LangsMenu, setLangsMenu] = useState(false);
   const slug = query.slug;
+
+  console.log(dir, "dir")
   return (
 
     <nav id='navbar' className={styles.navbar} dir={dir}>
@@ -36,7 +38,7 @@ const Navbar = ({ allTopics, allLangs, dir }) => {
 
       {topicsMenu &&
         <motion.div
-          animate={locale === 'ar' ? { x: [300, 0] } : { x: [-300, 0] }}
+          animate={dir === 'rtl' ? { x: [300, 0] } : { x: [-300, 0] }}
           transition={{ duration: 0.5, ease: "easeOut" }}
 
           className={styles.menu_container}>
@@ -65,7 +67,7 @@ const Navbar = ({ allTopics, allLangs, dir }) => {
 
       {LangsMenu &&
         <motion.div
-          animate={locale === 'ar' ? { x: [300, 0] } : { x: [-300, 0] }}
+          animate={dir === 'rtl' ? { x: [300, 0] } : { x: [-300, 0] }}
           transition={{ duration: 0.5, ease: "easeOut" }}
 
           className={styles.menu_container}>

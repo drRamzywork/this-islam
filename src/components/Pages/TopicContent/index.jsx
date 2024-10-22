@@ -5,8 +5,7 @@ import Topic2 from './Topic2';
 import Topic3 from './Topic3';
 import Topic4 from './Topic4';
 import Topic5 from './Topic5';
-
-
+import { motion } from 'framer-motion'
 
 const TopicContent = ({ contentData, dir }) => {
   const topicImage = contentData?.parent?.image;
@@ -62,7 +61,20 @@ const TopicContent = ({ contentData, dir }) => {
 
               < div className={styles.sec_container} dir={dir}>
 
-                <div className={styles.first_p_list}>
+                <motion.div
+                  transition={{
+                    type: "spring",
+                    duration: 1.4
+                  }}
+
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 1 }}
+
+
+
+
+                  className={styles.first_p_list}>
                   <div className={styles.title}>
                     <h3>{firstPList?.title_bold}</h3>
                   </div>
@@ -72,14 +84,30 @@ const TopicContent = ({ contentData, dir }) => {
                       {firstPList?.content}
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className={styles.topic_img}>
+                <motion.div
+                  transition={{
+                    type: "spring",
+                    duration: 2.4
+                  }}
+
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 1 }} className={styles.topic_img}>
                   <img src={topicImage} alt="" />
-                </div>
+                </motion.div>
 
                 {bodyObject?.map((topic, idx) =>
-                  <div className={styles.p_list} key={idx}>
+                  <motion.div
+                    transition={{
+                      type: "spring",
+                      duration: 1.4
+                    }}
+
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 1 }} className={styles.p_list} key={idx}>
                     <div className={styles.title}>
                       <h3>{topic?.list_p?.title_bold}</h3>
                     </div>
@@ -89,7 +117,7 @@ const TopicContent = ({ contentData, dir }) => {
                         {topic?.list_p?.content}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 )}
 
               </div>
@@ -107,7 +135,18 @@ const TopicContent = ({ contentData, dir }) => {
 
 
                   {childBodyObect?.map((topic, idx) =>
-                    <div className={styles.ol_list} key={idx}>
+                    <motion.div
+                      transition={{
+                        type: "spring",
+                        duration: 1.4
+                      }}
+
+                      initial={{ opacity: 0, x: 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+
+                      exit={{ opacity: 1 }}
+
+                      className={styles.ol_list} key={idx}>
                       <div className={styles.title}>
                         <h3>{topic?.ol_li?.title}</h3>
                       </div>
@@ -117,13 +156,11 @@ const TopicContent = ({ contentData, dir }) => {
                           {topic?.ol_li?.content}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   )}
                 </div>
 
               </div>
-
-
 
             </>
 

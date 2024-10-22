@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles2 from './index.module.scss'
-
+import { motion } from 'framer-motion'
 const Topic2 = ({ childrens, dir }) => {
 
 
@@ -36,7 +36,17 @@ const Topic2 = ({ childrens, dir }) => {
 
         <div className={styles2.sec_container3} dir={dir}>
           {childrens?.map((child, idx) => (
-            <div className={styles2.box} key={idx}>
+            <motion.div
+              transition={{
+                type: "spring",
+                duration: 1.4
+              }}
+
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+
+              exit={{ opacity: 1 }}
+              className={styles2.box} key={idx}>
               <div className={styles2.header_box}>
 
                 {child?.left_image &&
@@ -156,7 +166,7 @@ const Topic2 = ({ childrens, dir }) => {
 
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

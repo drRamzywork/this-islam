@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './index.module.scss';
-
+import { motion } from 'framer-motion'
 
 const Topic4 = ({ bodyObject, dir, topicImage }) => {
 
@@ -28,9 +28,17 @@ const Topic4 = ({ bodyObject, dir, topicImage }) => {
 
         <div className={styles.content_container_bg}>
 
-          <div className={styles.topic_img}>
+          <motion.div
+            transition={{
+              type: "spring",
+              duration: 2.4
+            }}
+
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 1 }} className={styles.topic_img}>
             <img src={topicImage} alt="" />
-          </div>
+          </motion.div>
 
 
 
@@ -46,10 +54,20 @@ const Topic4 = ({ bodyObject, dir, topicImage }) => {
                   );
                 case 'list_p':
                   return (
-                    <div key={index} className={styles.desc_title}>
+                    <motion.div
+                      transition={{
+                        type: "spring",
+                        duration: 1.4
+                      }}
+
+                      initial={{ opacity: 0, x: 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+
+                      exit={{ opacity: 1 }}
+                      key={index} className={styles.desc_title}>
                       <strong>{item.list_p.title_bold}</strong>
                       <p>{item.list_p.content}</p>
-                    </div>
+                    </motion.div>
                   );
                 case 'ul_li':
                   const content = item.ul_li.content;
@@ -60,14 +78,22 @@ const Topic4 = ({ bodyObject, dir, topicImage }) => {
                   const reference = match ? match[2].trim() : '';
 
                   return (
-                    <div className={styles.box} key={index}>
+                    <motion.div
+                      transition={{
+                        type: "spring",
+                        duration: 1.4
+                      }}
+
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 1 }} className={styles.box} key={index}>
                       <p>
                         {sentence}
                       </p>
 
                       {reference && <span className={styles.reference}> ({reference})</span>}
 
-                    </div>
+                    </motion.div>
                   );
                 default:
                   return null;

@@ -7,9 +7,9 @@ import Navbar from '@/components/Navbar';
 
 const Video = ({ siteInfo, dir, allLangs, allTopics }) => {
 
-  const SiteDescription = siteInfo.data.description;
-  const SiteKeyWords = siteInfo.data.keywords;
-  const SiteName = siteInfo.data.site_name;
+  const SiteDescription = siteInfo?.data?.description;
+  const SiteKeyWords = siteInfo?.data?.keywords;
+  const SiteName = siteInfo?.data?.site_name;
 
   const videos = [
     {
@@ -40,8 +40,6 @@ const Video = ({ siteInfo, dir, allLangs, allTopics }) => {
   const videoFiltred = video?.locales[locale] || video?.locales['ar'];
 
   const youtubeUrl = `https://www.youtube.com/embed/${videoFiltred?.url}`;
-
-
 
 
   return (
