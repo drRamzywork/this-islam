@@ -5,7 +5,6 @@ import Quran from "@/components/Home/Quran";
 import Footer from "@/components/Footer";
 import Questions from "@/components/Home/Questions";
 import Prophet from "@/components/Prophet";
-import Arkan from "@/components/Home/Arkan";
 import { useRouter } from "next/router";
 import Arkan2 from "@/components/Home/Arkan2";
 
@@ -41,7 +40,7 @@ export default function Data({
   const mohamed = allWords?.mohamed;
 
   const quranTitle = allWords?.quran_title || "";
-  const quranTitle2 = quranTitle.split(" ");
+  const quranTitle2 = quranTitle?.split(" ");
   const title_main1 = quranTitle2[0] || "";
   const title_main2 = quranTitle2[1] || "";
 
@@ -148,7 +147,6 @@ export default function Data({
       <Quran
         title_main1={title_main1}
         title_main2={title_main2}
-        quranDesc={quranDesc}
         quran={quran}
         dir={dir?.data?.dir}
         read_moreBtn={read_moreBtn}
@@ -160,7 +158,6 @@ export default function Data({
         home={home}
         testimonyTitle={testimonyTitle}
       />
-
       <Prophet
         dir={dir?.data?.dir}
         mohamed={mohamed}
@@ -173,7 +170,6 @@ export default function Data({
         read_moreBtn={read_moreBtn}
       />
       {locale === "ar" && <Questions questions={questions} />}
-
       <Footer dir={dir?.data?.dir} />
     </>
   );

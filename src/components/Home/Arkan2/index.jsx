@@ -92,7 +92,7 @@ const Arkan2 = ({ arkan, home, testimonyTitle, dir }) => {
               transition={{ duration: 0.5 }}>
 
 
-              <motiondiv className={styles.boxes_container}>
+              <div className={styles.boxes_container}>
                 {data.map((box, idx) =>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -119,7 +119,7 @@ const Arkan2 = ({ arkan, home, testimonyTitle, dir }) => {
                   </motion.div>
                 )}
 
-              </motiondiv>
+              </div>
 
 
 
