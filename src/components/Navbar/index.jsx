@@ -13,7 +13,6 @@ const Navbar = ({ allTopics, allLangs, dir }) => {
   const [LangsMenu, setLangsMenu] = useState(false);
   const slug = query.slug;
 
-  console.log(dir, "dir")
   return (
 
     <nav id='navbar' className={styles.navbar} dir={dir}>

@@ -21,8 +21,6 @@ export default function App({ Component, pageProps }) {
   const { locale } = useRouter();
   const combinedFontFamily = `${cairo.style.fontFamily}, ${tajawal.style.fontFamily}`;
 
-  console.log(cairo.style.fontFamily, "cairo.style.fontFamily");
-  console.log(tajawal.style.fontFamily, "tajawal.style.fontFamily");
   return (
     <SimpleBar
       style={{

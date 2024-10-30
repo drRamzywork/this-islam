@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 
 const Topic5 = ({ childrens, topicImage, dir }) => {
 
-  console.log("topi5", 'topic5')
 
   return (
     <>
